@@ -1,0 +1,28 @@
+/* Bordes y márgenes: Agrega un borde y un margen a las imágenes (<img>) en tu página para darles un aspecto más definido. */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    text-align: center;
+    margin: 20px 0;
+}
+
+.imagenes{
+    width: 100%;
+    padding-left: 10px;
+}
+
+.imagenes img {
+    width: 24.5%;
+    height: 40vh;
+    border: 4px dotted #F00;
+}
+.img {
+    margin: 10px 25%;
+    width: 49%;
+    border: 2px solid #0F0;
+}

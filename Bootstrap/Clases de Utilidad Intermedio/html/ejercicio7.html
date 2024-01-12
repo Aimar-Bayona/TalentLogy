@@ -1,0 +1,74 @@
+<!-- Visualización de Datos con Gráficos: Diseña una página que muestre datos estadísticos utilizando gráficos interactivos (puedes usar bibliotecas como Chart.js). Aplica clases de Bootstrap para organizar la información. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualización de Datos</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container mt-4">
+        <h2 class="text-center mb-4">Datos Estadísticos</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <canvas id="barChart"></canvas>
+            </div>
+            <div class="col-md-6">
+                <canvas id="pieChart"></canvas>
+            </div>
+            <div class="col-md-6">
+                <canvas id="donnutChart"></canvas>
+            </div>
+            <div class="col-md-6">
+                <canvas id="lineChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let data = {
+            labels: ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes"],
+            datasets: [{
+                label: "Ventas Diarias",
+                data: [50, 123, 74, 91, 48],
+                backgroundColor: '#008888',
+                borderColor: '#88cccc',
+                borderWidth: 1
+            }]
+        }
+
+        let options = {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            },
+            responsive: true
+        }
+
+        let chart1 = new Chart(document.getElementById('barChart'),{
+            type: 'bar',
+            data,
+            options
+        })
+        let chart2 = new Chart(document.getElementById('pieChart'),{
+            type: 'pie',
+            data,
+            options
+        })
+        let chart3 = new Chart(document.getElementById('donnutChart'),{
+            type: 'polarArea',
+            data,
+            options
+        })
+        let chart4 = new Chart(document.getElementById('lineChart'),{
+            type: 'line',
+            data,
+            options
+        })
+    </script>
+</body>
+</html>

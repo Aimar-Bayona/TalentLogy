@@ -1,0 +1,17 @@
+/* Estiliza los campos de entrada de un formulario (<input>, <textarea>) para que tengan un fondo de color cuando se enfocan y muestren un mensaje de ayuda utilizando pseudoelementos. */
+
+input, textarea {
+    margin: 10px;
+    padding: 5px;
+    border: 1px solid #eee;
+}
+
+input:focus, textarea:focus {
+    background-color: #eee;
+}
+
+input::placeholder, textarea::placeholder {
+    font-style: italic;
+    color: #222;
+    font-size: 0.9em;
+}

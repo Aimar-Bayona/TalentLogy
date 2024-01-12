@@ -1,0 +1,11 @@
+/* Crea una caja con un borde de imagen degradado. */
+
+.caja {
+    width: 200px;
+    height: 200px;
+    background-color: #2e5e8d;
+    border: 10px solid transparent;
+    border-image-source: url(https://i.pinimg.com/originals/12/c0/be/12c0be605803ee52b8ef588868ded82d.jpg);
+    border-image-slice: 1;
+    border-image-outset: 10px;
+}

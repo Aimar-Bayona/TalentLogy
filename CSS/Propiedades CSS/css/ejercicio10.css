@@ -1,0 +1,68 @@
+/* Crea un diseño responsivo que utilice diferentes tipos de posicionamiento para adaptarse a diferentes tamaños de pantalla. Este ejercicio te ayudará a aplicar los conceptos aprendidos para crear un diseño que se adapte a diferentes dispositivos. */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+nav {
+    background-color: #eee;
+    padding: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+section {
+    padding: 20px;
+}
+
+article {
+    float: left;
+    width: 60%;
+    margin-bottom: 50px;
+}
+
+aside {
+    float: right;
+    width: 30%;
+    padding: 20px;
+    background-color: #f2f2f2;
+    margin-bottom: 50px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    article, aside {
+        float: none;
+        width: 100%;
+    }
+}

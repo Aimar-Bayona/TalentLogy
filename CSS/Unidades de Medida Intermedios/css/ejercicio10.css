@@ -1,0 +1,14 @@
+/* Crea un elemento con un alto que herede el tamaño de su elemento padre, pero no sea inferior a 100px. */
+
+.contenedor {
+    min-height: 100px;
+    min-width: 100px;
+    background-color: brown;
+}
+
+.caja {
+    width: 150px;
+    min-width: 10px;
+    height: 150px;
+    background-color: aqua;
+}

@@ -1,0 +1,24 @@
+/* Estiliza las filas impares y pares (<tr>) de una tabla (<table>) de manera diferente, utilizando pseudoclases, como colores de fondo alternantes. */
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    border: 1px solid #333;
+    padding: 5px;
+}
+
+tr:nth-child(even) {
+    background-color: #abb8ff;
+}
+
+tr:nth-child(odd) {
+    background-color: #dadfff;
+}
+
+thead tr {
+    background-color: #6980ff !important;
+    color: #fff;
+}

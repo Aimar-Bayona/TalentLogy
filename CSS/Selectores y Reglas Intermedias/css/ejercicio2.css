@@ -1,0 +1,42 @@
+/* Diseño de una Tarjeta de Producto: Diseña una tarjeta de producto con una imagen, título, descripción y precio. Estiliza la tarjeta para que se vea atractiva y bien organizada. */
+
+* {
+    font-family: 'Arial', Courier, monospace;
+    padding: 0;
+    margin: 0;
+}
+.tienda {
+    display: flex;
+}
+
+.producto{
+    width: 200px;
+    height: 350px;
+    margin: 15px;
+    padding: 15px;
+    border-radius: 15px;
+    border: 2px #333 solid;
+}
+
+img {
+    width: 100%;
+}
+
+header {
+    text-align: center;
+    margin: 5px;
+}
+
+h1 {
+    font-size: 17px;
+}
+
+p {
+    font-size: 12px;
+    text-align: justify;
+    padding-bottom: 5px;
+}
+strong {
+    color: #800080;
+    font-size: 15px;
+}

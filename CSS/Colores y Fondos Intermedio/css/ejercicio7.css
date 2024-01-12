@@ -1,0 +1,11 @@
+/* Fondo de Ancho Completo: Establece un fondo que se extienda por todo el ancho de la pantalla, incluso si el contenido no lo hace. */
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.caja {
+    width: 100%;
+    background-color: red;
+}

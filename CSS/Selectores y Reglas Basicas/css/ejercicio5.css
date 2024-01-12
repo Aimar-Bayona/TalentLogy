@@ -1,0 +1,20 @@
+/* Alineación de texto: Crea una clase llamada "centrar-texto" y úsala para centrar horizontalmente el texto en cualquier elemento al que apliques esta clase. */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    text-align: center;
+}
+
+p {
+    font-size: 20px;
+    margin: 20px 5px;
+}
+
+.centrar-texto {
+    text-align: center;
+}

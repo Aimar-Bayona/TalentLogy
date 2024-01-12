@@ -1,0 +1,5 @@
+/* Estiliza el fondo de un párrafo (<p>) cuando se encuentra dentro de un contenedor con la clase "destacado". */
+
+.destacado p {
+    background-color: #ffff00; 
+}

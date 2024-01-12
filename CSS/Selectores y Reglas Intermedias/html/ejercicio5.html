@@ -1,0 +1,27 @@
+<!-- Creación de un Botón de Cambio de Tema: Crea un botón que permita a los usuarios cambiar entre dos temas de color diferentes en tu página web. Cambia los estilos de la página según el tema seleccionado. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambio de Tema</title>
+    <link rel="stylesheet" href="../css/ejercicio5.css">
+</head>
+<body>
+    <div class="contenido">
+        <h1>Bienvenido</h1>
+        <p>Esta es una página de ejemplo.</p>
+        <button id="cambioTema">Cambiar Tema</button>
+    </div>
+   
+    <script>
+        document.addEventListener("DOMContentLoaded", ()=>{
+            const tema = document.getElementById("cambioTema")
+            const body = document.body
+            tema.addEventListener("click", ()=> body.classList.toggle("dark"))
+        })
+    // </script>
+
+</body>
+</html>

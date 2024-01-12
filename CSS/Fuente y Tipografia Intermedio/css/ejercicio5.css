@@ -1,0 +1,5 @@
+/* Altura de Línea: Cambia la altura de línea en un párrafo o encabezado utilizando la propiedad line-height. */
+
+p {
+    line-height: 5.5;
+}

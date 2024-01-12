@@ -1,0 +1,8 @@
+/* Define un relleno de 10px para la parte superior e inferior de la caja. */
+
+.caja {
+    width: 200px;
+    height: 200px;
+    background-color: #2e5e8d;
+    padding: 10px 0;
+}

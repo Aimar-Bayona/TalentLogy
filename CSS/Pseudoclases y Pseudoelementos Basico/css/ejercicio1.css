@@ -1,0 +1,5 @@
+/* Cambia el color de texto de un enlace (<a>) cuando se pasa el mouse sobre él. */
+
+a:hover {
+    color: green;
+}

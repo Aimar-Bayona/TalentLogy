@@ -1,0 +1,9 @@
+/* Define un borde de 2px de grosor y color rojo para la parte izquierda y derecha de la caja. */
+
+.caja {
+    width: 200px;
+    height: 200px;
+    background-color: #2e5e8d;
+    border-left: 2px solid #f00;
+    border-right: 2px solid #f00;
+}

@@ -1,0 +1,7 @@
+/* Crea una caja con un borde de sombra de diferentes colores en cada lado. */
+
+.caja {
+    width: 200px;
+    height: 200px;
+    box-shadow: 0px -5px 10px #008000, -5px 0px 10px #f00, 5px 0px 10px #00f, 0px 5px 10px #f0f;
+}

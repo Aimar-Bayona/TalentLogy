@@ -1,0 +1,23 @@
+/* Estilo de encabezados en diferentes secciones: Cambia el color de fondo de los encabezados en diferentes secciones de tu página. Utiliza selectores de tipo y de clase para lograrlo. */
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.seccion1 h1 {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px;
+}
+
+.seccion2 h2 {
+    background-color: #2ecc71;
+    color: #fff;
+    padding: 10px;
+}
+
+.seccion3 h3 {
+    background-color: #e74c3c;
+    color: #fff;
+    padding: 10px;
+}

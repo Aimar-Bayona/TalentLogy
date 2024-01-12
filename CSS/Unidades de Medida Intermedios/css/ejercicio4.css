@@ -1,0 +1,13 @@
+/* Crea un elemento con un ancho que se ajuste al ancho de su contenedor, pero no se extienda más allá de los límites de la ventana del navegador. */
+
+.contenedor {
+    max-width: 100%;
+    max-height: 100vh;
+    background-color: red;
+}
+
+.caja {
+    width: 300px;
+    background-color: rebeccapurple;
+    height: 300px;
+}

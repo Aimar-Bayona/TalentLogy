@@ -1,0 +1,30 @@
+<!-- Maquetación de un Formulario de Registro: Diseña un formulario de registro con campos para nombre, correo electrónico, contraseña, etc. Estiliza los campos, las etiquetas y agrega validación de campos obligatorios. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="../css/ejercicio4.css">
+</head>
+<body>
+    <form id="registroForm" action="#" method="post">
+        <h2>Formulario de Registro</h2>
+
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="correo">Correo Electrónico:</label>
+        <input type="email" id="correo" name="correo" required>
+
+        <label for="contrasena">Contraseña:</label>
+        <input type="password" id="contrasena" name="contrasena" required>
+
+        <label for="confirmarContrasena">Confirmar Contraseña:</label>
+        <input type="password" id="confirmarContrasena" name="confirmarContrasena" required>
+
+        <button type="submit">Registrarse</button>
+    </form>
+</body>
+</html>

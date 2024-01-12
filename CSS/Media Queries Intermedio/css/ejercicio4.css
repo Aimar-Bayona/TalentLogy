@@ -1,0 +1,17 @@
+/* Tipografía Escalable: Escala el tamaño de fuente de todo el documento de manera proporcional al ancho de la pantalla, manteniendo un tamaño de fuente mínimo y máximo. */
+
+body {
+    font-size: 2vw; 
+}
+
+@media screen and (min-width: 600px) {
+    body {
+        font-size: 3vw; 
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    body {
+        font-size: 24px;
+    }
+}

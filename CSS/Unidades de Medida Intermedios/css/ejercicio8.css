@@ -1,0 +1,10 @@
+/* Crea un elemento con un alto del doble del tamaño de la fuente del elemento padre, pero solo si el tamaño de la fuente es inferior a 16px. */
+
+.contenedor {
+    font-size: 14px; /* Tamaño de fuente del elemento padre, ajusta según sea necesario */
+}
+
+.caja {
+    height: calc(2em + 2px);
+    background-color: lightcoral;
+}

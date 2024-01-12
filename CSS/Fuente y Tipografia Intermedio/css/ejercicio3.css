@@ -1,0 +1,9 @@
+/* Negrita y Cursiva: Aplica estilos de negrita y cursiva a diferentes partes de tu texto utilizando la propiedad font-weight y font-style. */
+
+p {
+    font-weight: bold;
+}
+
+h2 {
+    font-style: italic;
+}

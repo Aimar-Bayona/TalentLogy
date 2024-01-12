@@ -1,0 +1,12 @@
+/* Crea una caja con un ancho y un alto variables, dependiendo del tamaño de la pantalla. */
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.caja {
+    width: 100%;
+    height: 100vh;
+    background-color: #2e5e8d;
+}

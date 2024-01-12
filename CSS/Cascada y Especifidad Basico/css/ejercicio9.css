@@ -1,0 +1,5 @@
+/* Crea una regla CSS para establecer el color del texto de todos los elementos p con la clase mi-clase. */
+
+.mi-clase {
+    color: green;
+}

@@ -1,0 +1,6 @@
+/* Crea un elemento con un alto del 50% de la ventana del navegador. */
+
+.caja {
+    background-color: red;
+    height: 50vh;
+}

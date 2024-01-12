@@ -1,0 +1,14 @@
+/* Botones Animados: Crea un botón que cambie de color y se desplace hacia la derecha cuando se coloque el mouse sobre él, pero solo cuando el dispositivo tenga una relación de píxeles físicos a píxeles CSS (device-pixel-ratio) superior a 2. */
+
+@media screen and (min-resolution: 2dppx) {
+    button {
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    button:hover {
+        color: white;
+        background-color: red;
+        border: none;
+        transform: translateX(10px); 
+    }
+}

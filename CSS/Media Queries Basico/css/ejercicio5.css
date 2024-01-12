@@ -1,0 +1,12 @@
+/* Cambia el color de fondo de un encabezado (<header>) cuando el dispositivo tenga una relación de píxeles físicos a píxeles CSS (device-pixel-ratio) de 2. */
+
+header {
+  background-color: #ffb0b0;
+}
+
+@media only screen and (max-device-pixel-ratio: 2) {
+    header {
+        background-color: #f00;
+    }
+}
+

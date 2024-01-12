@@ -1,0 +1,8 @@
+/* Define un margen de 30px para todos los lados de la caja. */
+
+.caja {
+    width: 200px;
+    height: 200px;
+    background-color: #2e5e8d;
+    margin: 30px;
+}

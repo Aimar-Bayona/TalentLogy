@@ -1,0 +1,5 @@
+/* Subraya el último elemento de una lista ordenada (<ol>). */
+
+li:last-child {
+    text-decoration: underline;
+}

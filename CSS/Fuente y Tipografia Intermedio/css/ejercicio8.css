@@ -1,0 +1,13 @@
+/* Combinación de Fuentes: Crea una combinación de fuentes para diferentes tipos de elementos en tu página (encabezados, párrafos, enlaces, etc.). */
+
+p {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+h1 {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+a {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}

@@ -1,0 +1,13 @@
+/* Crea tres reglas CSS para establecer el tamaño de la fuente de un elemento p. Una regla debe establecer el tamaño en 16px para todos los elementos p, la otra en 20px para todos los elementos p con la clase mi-clase y la tercera en 24px para todos los elementos p con el id mi-id. */
+
+p {
+    font-size: 16px;
+}
+
+.mi-clase {
+    font-size: 20px;
+}
+
+#mi-id {
+    font-size: 24px;
+}

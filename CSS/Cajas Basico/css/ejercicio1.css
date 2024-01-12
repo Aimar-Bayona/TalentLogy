@@ -1,0 +1,7 @@
+/* Crea una caja con un ancho y un alto de 200px. */
+
+.caja {
+    width: 200px;
+    height: 200px;
+    background-color: #2e5e8d;
+}

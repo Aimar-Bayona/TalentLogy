@@ -1,0 +1,5 @@
+/* Uso de Fuentes Externas: Integra una fuente externa de Google Fonts o cualquier otra fuente web y aplica esta fuente a tu página. */
+
+* {
+    font-family: 'Bungee Spice', sans-serif;
+}

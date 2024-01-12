@@ -1,0 +1,15 @@
+/* Crea una imagen que se superponga a un texto. Este ejercicio te ayudará a utilizar el posicionamiento para crear efectos visuales. */
+
+body {
+    position: relative;
+    padding: 20px;
+}
+
+img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 150px;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}

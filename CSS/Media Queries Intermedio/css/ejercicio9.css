@@ -1,0 +1,30 @@
+/* Estilo de Enlaces según Dispositivo: Aplica estilos específicos a los enlaces (<a>) que contengan la palabra "info" cuando el dispositivo sea una impresora (print), pero estilos diferentes cuando sea una pantalla (screen). */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    display: flex;
+}
+
+@media print {
+    a::before {
+        content: "info: ";
+    }
+}
+
+@media screen {
+    a {
+        background-color: #eee;
+        padding: 5px;
+        margin: 10px 0;
+        width: 100%;
+        color: #666;
+        text-decoration: none;
+    }
+    a:hover {
+        color: #111;
+    }
+}

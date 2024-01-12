@@ -1,0 +1,7 @@
+/* Ajusta el tamaño de texto de un párrafo (<p>) cuando el ancho de la pantalla esté entre 600px y 900px. */
+
+@media screen and (min-width: 600px) and (max-width: 900px){
+    p{
+        font-size: 10px;
+    }
+}

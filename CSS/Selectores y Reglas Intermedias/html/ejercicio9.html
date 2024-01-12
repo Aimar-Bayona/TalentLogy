@@ -1,0 +1,51 @@
+<!-- Estilo de una Caja de Comentarios: Diseña una caja de comentarios con campos para nombre, correo electrónico y comentario. Agrega estilos a los campos y muestra los comentarios en una lista con estilo. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Caja de Comentarios</title>
+    <link rel="stylesheet" href="../css/ejercicio9.css" />
+  </head>
+  <body>
+    <div class="comentarios">
+      <h2>Deja tu Comentario</h2>
+      <form action="POST" id="formulario">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required />
+        <label for="email">Correo Electrónico:</label>
+        <input type="email" id="email" name="email" required />
+        <label for="comentario">Comentario:</label>
+        <textarea name="comentario" id="comentario" required></textarea>
+        <button type="submit">Enviar Comentario</button>
+      </form>
+    </div>
+
+    <div class="lista">
+      <h2>Comentarios</h2>
+      <ul id="listaComentarios"></ul>
+    </div>
+
+    <script>
+    document,addEventListener("DOMContentLoaded", ()=>{
+        const formulario = document.getElementById("formulario")
+        const lista = document.getElementById("listaComentarios")
+
+        formulario.addEventListener("submit", event => {
+            event.preventDefault()
+
+            const nombre = document.getElementById("nombre").value
+            const correo = document.getElementById("email").value
+            const comentario = document.getElementById("comentario").value
+            const form = document.createElement("li")
+            form.innerHTML =`<strong>${nombre}</strong> (${correo}): ${comentario}`
+
+            lista.appendChild(form)
+            formulario.reset()
+            
+        })
+    })
+    </script>
+  </body>
+</html>

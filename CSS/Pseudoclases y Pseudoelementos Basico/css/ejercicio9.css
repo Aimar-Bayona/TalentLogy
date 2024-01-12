@@ -1,0 +1,5 @@
+/* Estiliza el color del texto del placeholder de un campo de entrada de texto (<input type="text">). */
+
+input::placeholder {
+    color: red;
+}

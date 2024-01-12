@@ -1,0 +1,10 @@
+/* Crea un elemento con un alto que se ajuste al alto de su contenedor, pero no se extienda más allá de los límites de la ventana del navegador. */
+
+.contenedor {
+    max-height: 100vh;
+}
+
+.caja {
+    height: 150px;
+    background-color: rebeccapurple;
+}

@@ -1,0 +1,10 @@
+/* Crea una caja que esté posicionada 100px desde la parte superior y 100px desde la izquierda del documento. Este ejercicio te ayudará a comprender el posicionamiento absoluto. */
+
+.caja {
+    height: 200px;
+    width: 200px;
+    background-color: #f00;
+    position: absolute;
+    left: 100px;
+    top: 100px;
+}

@@ -1,0 +1,5 @@
+/* Crea una regla CSS para establecer el color del texto de un elemento h1 con la clase mi-clase. */
+
+.mi-clase {
+    color: #ff0;
+}

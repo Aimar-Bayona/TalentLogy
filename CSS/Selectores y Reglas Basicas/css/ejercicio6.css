@@ -1,0 +1,21 @@
+/* Estilo de lista: Cambia el estilo de viñetas o números de una lista desordenada (<ul>) o una lista ordenada (<ol>). */
+
+header {
+    color: red;
+}
+
+ol {
+    list-style: upper-alpha;
+}
+
+ul {
+    list-style: circle;
+}
+
+li ol {
+    list-style: lower-alpha;
+}
+
+li ul {
+    list-style: georgian;
+}

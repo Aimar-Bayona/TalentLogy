@@ -1,0 +1,7 @@
+/* Fondo de Opacidad: Crea un bloque con un color de fondo semitransparente utilizando la propiedad rgba para el color de fondo. */
+
+.caja {
+    height: 300px;
+    width: 300px;
+    background-color: rgba(0 0 255 .5);
+}

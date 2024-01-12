@@ -1,0 +1,14 @@
+/* Fondo Fijo al Desplazar: Crea un bloque con un fondo fijo que permanezca en su posición incluso cuando el usuario desplaza la página. */
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.caja {
+    height: 100vh; 
+    background-image: url('https://cdn.wikimg.net/en/strategywiki/images/b/b1/MVC_Magneto.png'); 
+    background-size: cover; 
+    background-position: center;
+    background-attachment: fixed;
+}

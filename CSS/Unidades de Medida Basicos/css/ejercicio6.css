@@ -1,0 +1,6 @@
+/* Crea un elemento con un alto de 100px. */
+
+.caja {
+    background-color: red;
+    height: 100px;
+}

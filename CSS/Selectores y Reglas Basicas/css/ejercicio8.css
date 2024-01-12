@@ -1,0 +1,66 @@
+/* Estilo de botones: Estiliza un botón (<button>) en tu página web. Cambia el color de fondo, el color de texto y agrega un borde. */
+
+.botones {
+    margin-top: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+button {
+    width: 150px;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #333;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: transparent;
+    color: #000;
+    transform: scale(1.1);
+}
+
+.a {
+    background-color: #3498db;
+    color: #fff;
+    border-radius: 20px;
+    border: 2px solid #236794;
+}
+
+.b {
+    background-color: #2ecc71;
+    color: #fff;
+    border-radius: 0;
+    border: 2px dashed #27ae60;
+}
+
+.c {
+    background-color: #e74c3c;
+    color: #fff;
+    border-radius: 50%;
+    border: 2px dotted #c0392b;
+}
+
+.d {
+    background-color: #f39c12;
+    color: #fff;
+    border-radius: 10px 0 10px 0;
+    border: 2px double #d35400;
+}
+
+.e {
+    background-color: #9b59b6;
+    color: #fff;
+    border-radius: 0;
+    border: 2px groove #8e44ad;
+}
+
+.f {
+    background-color: #ecf0f1;
+    color: #333;
+    border-radius: 5px;
+    border: 2px outset #bdc3c7;
+}

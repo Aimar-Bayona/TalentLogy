@@ -1,0 +1,9 @@
+/* Crea dos reglas CSS para establecer el color del texto de un elemento h1. Una regla debe establecer el color en rojo y la otra en azul. */
+
+h1 {
+    color: red;
+}
+
+.texto {
+    color: blue;
+}

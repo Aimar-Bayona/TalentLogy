@@ -1,0 +1,11 @@
+/* Crea una caja con un borde de imagen que se adapte al tamaño de la caja. */
+
+.caja {
+    width: 200px;
+    height: 200px;
+    background-color: #2e5e8d;
+    padding: 10px;
+    border: 10px solid transparent;
+    border-image: url(https://i.pinimg.com/originals/12/c0/be/12c0be605803ee52b8ef588868ded82d.jpg) 30% round;
+    border-image-slice: fill;
+}

@@ -1,0 +1,11 @@
+/* Hace que un menú de navegación (<nav>) sea visible solo en dispositivos con una resolución mínima de 1024x768. */
+
+nav {
+    display: none;
+}
+
+@media screen and (min-width: 1024px) and (min-height: 768px) {
+    nav {
+        display: flex;
+    }
+}

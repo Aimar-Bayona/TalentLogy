@@ -1,0 +1,6 @@
+/* Crea un elemento con un ancho de 100px. */
+
+.caja {
+    background-color: red;
+    width: 100px;
+}

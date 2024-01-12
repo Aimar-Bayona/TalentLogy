@@ -1,0 +1,5 @@
+/* Estiliza el primer elemento de una lista desordenada (<ul>) dándole un fondo de color gris. */
+
+li:first-child {
+    background-color: gray;
+}

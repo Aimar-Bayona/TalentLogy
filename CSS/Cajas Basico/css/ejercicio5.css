@@ -1,0 +1,7 @@
+/* Crea una caja con un ancho y un alto variables, dependiendo del contenido. */
+
+.caja {
+    display: inline-block;
+    padding: 10px;
+    background-color: #2e5e8d;
+}

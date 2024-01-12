@@ -1,0 +1,12 @@
+/* Crea un elemento con un alto del doble del tamaño de la fuente del elemento padre. */
+
+.caja {
+    font-size: 1em;
+    background-color: red;
+}
+
+.subcaja {
+    font-size: 2em;
+    background-color: rebeccapurple;
+    height: 2em;
+}

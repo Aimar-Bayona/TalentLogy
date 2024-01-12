@@ -1,0 +1,12 @@
+/* Crea un elemento con un alto de 100px en la pantalla de un monitor de 1920x1080 píxeles. */
+
+.contenedor {
+    background-color: aqua;
+    height: 1080px;
+    width: 1920px;
+}
+
+.caja {
+    height: 100px;
+    background-color: #eea341;
+}

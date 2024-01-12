@@ -1,0 +1,12 @@
+/* Crea un elemento con un alto que se ajuste al alto de su contenedor. */
+
+.contenedor {
+    height: 100px;
+    width: 100px;
+    background-color: red;
+}
+
+.caja {
+    /* background-color: aliceblue; */
+    height: 100%;
+}

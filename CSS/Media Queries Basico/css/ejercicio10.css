@@ -1,0 +1,7 @@
+/* Oculta una sección completa de la página cuando el dispositivo se imprime en papel. */
+
+@media print {
+    section {
+        display: none;
+    }
+}

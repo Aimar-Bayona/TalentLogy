@@ -1,0 +1,11 @@
+/* Crea un elemento con un ancho del doble del tamaño de la fuente del elemento padre. */
+
+.caja {
+    background-color: red;
+    font-size: 1em;
+}
+.subcaja {
+    font-size: 2em;
+    background-color: pink;
+    color: black;
+}

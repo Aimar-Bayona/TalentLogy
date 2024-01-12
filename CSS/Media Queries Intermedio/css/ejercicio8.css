@@ -1,0 +1,23 @@
+/* Elementos Emergentes Dinámicos: Diseña un elemento emergente que se muestre en la esquina inferior derecha de la pantalla cuando el ancho de la pantalla sea mayor a 1200px, y en la esquina superior izquierda cuando sea menor a 1200px. */
+
+.element {
+    background-color: green;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+}
+
+@media screen and (min-width:1200px) {
+    .element {
+        bottom: 0;
+        left: 0;
+    }
+}
+
+@media screen and (max-width:1200px) {
+    .element {
+        top: 0;
+        right: 0;
+        background-color: red;
+    }
+}

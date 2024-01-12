@@ -1,0 +1,8 @@
+/* Haz que la primera letra de cada párrafo (<p>) sea más grande y de color rojo. */
+
+p::first-letter {
+    font-size: 35px;
+    text-transform: uppercase;
+    color: red;
+    font-weight: bold;
+}

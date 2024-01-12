@@ -1,0 +1,46 @@
+/* Estilo de Lista de Enlaces: Diseña una lista de enlaces donde cada enlace tiene un estilo de fuente diferente (tamaño, color, estilo). */
+
+li {
+  text-decoration: none;
+}
+
+li:first-child {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 15px;
+  color: green;
+  a{
+    color: green;
+  }
+}
+li:nth-child(2) {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-size: 50px;
+    color: yellow;
+    a{
+      color: yellow;
+    }
+}
+li:nth-child(3) {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 20px;
+    color: blue;
+    a{
+      color: blue;
+    }
+}
+li:nth-child(4) {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+    color: red;
+    a{
+      color: red;
+    }
+}
+li:last-child {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 25px;
+    color: purple;
+    a{
+      color: purple;
+    }
+}

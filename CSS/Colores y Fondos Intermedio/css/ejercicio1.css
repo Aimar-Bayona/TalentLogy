@@ -1,0 +1,13 @@
+/* Cambio de Color de Texto: Selecciona un elemento en tu página y cambia su color de texto utilizando diferentes métodos: nombres de colores, códigos hexadecimales o valores RGB. */
+
+p {
+    color: red
+}
+
+h1 {
+    color:#0f0
+}
+
+h4 {
+    color: rgb(0,0,255)
+}

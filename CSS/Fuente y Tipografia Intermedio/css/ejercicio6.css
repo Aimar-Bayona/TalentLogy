@@ -1,0 +1,21 @@
+/* Alineación de Texto: Experimenta con la alineación del texto en diferentes elementos usando la propiedad text-align. */
+
+p {
+    text-align: center;
+}
+
+h1 {
+    text-align: end;
+}
+
+h2 {
+    text-align: justify;
+}
+
+h3 {
+    text-align: right;
+}
+
+h4 {
+    text-align: start;
+}

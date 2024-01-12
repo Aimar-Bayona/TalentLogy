@@ -1,0 +1,18 @@
+/* Aplica un borde alrededor de un elemento (<div>) solo en dispositivos de impresión. */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.caja {
+    height: 100px;
+    width: 100px;
+    background-color: blue;
+}
+
+@media print {
+    .caja {
+        border: 2px solid #f00;
+    }
+}

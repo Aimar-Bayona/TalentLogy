@@ -1,0 +1,13 @@
+/* Crea tres reglas CSS para establecer el color del texto de un elemento p. Una regla debe establecer el color en rojo para todos los elementos p, la otra en azul para todos los elementos p con la clase mi-clase y la tercera en verde para todos los elementos p con el id mi-id. */
+
+p {
+    color: red;
+}
+
+.mi-clase {
+    color: blue;
+}
+
+#mi-id {
+    color: green;
+}

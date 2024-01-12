@@ -1,0 +1,18 @@
+/* Ajusta los márgenes de un elemento cuando la resolución de la pantalla sea superior a 1200px de ancho. */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.caja {
+    width: 300px;
+    height: 300px;
+    background-color: red;
+}
+
+@media screen and (min-width: 1200px) {
+    .caja {
+        margin: 20px
+    }
+}

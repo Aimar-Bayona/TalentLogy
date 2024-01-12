@@ -1,0 +1,53 @@
+/* Creación de una Barra de Navegación Fija: Diseña una barra de navegación que permanezca fija en la parte superior de la página incluso cuando se desplaza hacia abajo. Agrega transiciones suaves al desplazarse. */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+nav {
+    background-color: #02034c;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    transition: background-color 1s ease;
+}
+
+.logo {
+    color: #fff;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+}
+
+li {
+    margin-right: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #ffd700;
+}
+
+body {
+    padding-top: 60px; 
+}
+

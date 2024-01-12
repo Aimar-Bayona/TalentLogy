@@ -1,0 +1,5 @@
+/* Crea una regla CSS para establecer el tamaño de la fuente de todos los elementos p con la clase mi-clase. */
+
+.mi-clase p {
+    font-size: 30px;
+}

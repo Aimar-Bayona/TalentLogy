@@ -1,0 +1,28 @@
+/* Diseño de Página de Inicio Responsiva: Crea una página de inicio que utilice el sistema de rejilla de Bootstrap para organizar un encabezado, una sección de características destacadas y un área de suscripción. Asegúrate de que la página se vea bien en dispositivos de diferentes tamaños. */
+
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    color: #ddd;
+    background-color: #333;
+}
+
+.row h2 {
+    background-color: #555;
+    color: #bbb;
+}
+
+.row p {
+    color: #777;
+}
+
+.row h2 {
+    color: #333;
+}

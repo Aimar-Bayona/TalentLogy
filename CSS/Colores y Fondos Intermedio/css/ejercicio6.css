@@ -1,0 +1,6 @@
+/* Encabezado con Fondo y Texto Blanco: Diseña un encabezado con un fondo oscuro y texto blanco para mejorar la legibilidad. */
+
+h1 {
+    background-color: #222;
+    color: #ddd;
+}

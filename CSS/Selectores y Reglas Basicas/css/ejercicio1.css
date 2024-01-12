@@ -1,0 +1,20 @@
+/* Cambiar el color del texto de un encabezado: Selecciona un elemento de encabezado (<h1>, <h2>, etc.) y cambia el color de texto a tu elección utilizando un selector de tipo. */
+
+h1 {
+    color: #00F;
+}
+h2 {
+    color: #0FF;
+}
+h3 {
+    color: #F0F;
+}
+h4 {
+    color: #FF0;
+}
+h5 {
+    color: #0F0;
+}
+h6 {
+    color: #F00;
+}

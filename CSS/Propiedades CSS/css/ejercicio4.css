@@ -1,0 +1,8 @@
+/* Crea una caja que esté posicionada a la izquierda de los elementos que se encuentren a su derecha en el flujo del documento. Este ejercicio te ayudará a comprender el posicionamiento flotante. */
+
+.caja {
+    height: 200px;
+    width: 200px;
+    background-color: #f00;
+    float: left;
+}

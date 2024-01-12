@@ -1,0 +1,5 @@
+/* Antes de cada elemento de una lista ordenada (<ol>), añade un icono de flecha utilizando el pseudoelemento ::before. */
+
+li::before {
+    content: '->';
+}

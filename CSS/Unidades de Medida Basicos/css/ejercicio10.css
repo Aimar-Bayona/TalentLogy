@@ -1,0 +1,10 @@
+/* Crea un elemento con un alto que herede el tamaño de su elemento padre. */
+
+.caja {
+    background-color: red;
+    height: 150px;
+}
+.subcaja {
+    background-color: rebeccapurple;
+    height: inherit;
+}

@@ -1,0 +1,25 @@
+/* Diseño de Cuadrícula Responsivo: Crea una cuadrícula de tres columnas que se convierta en una cuadrícula de dos columnas cuando el ancho de la pantalla sea inferior a 768px y una sola columna cuando sea inferior a 480px. */
+
+.caja {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.item {
+    background-color: red;
+    height: 300px;
+    width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    .caja {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .caja {
+        grid-template-columns: 1fr;
+    }
+}

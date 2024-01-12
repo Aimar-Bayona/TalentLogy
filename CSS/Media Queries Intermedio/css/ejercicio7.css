@@ -1,0 +1,24 @@
+/* Encabezado Fijo: Crea un encabezado que se vuelva fijo en la parte superior de la pantalla después de hacer scroll de 200px, pero solo cuando el dispositivo esté en orientación vertical (portrait). */
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    background-color: #f2f2f2;
+    padding: 10px;
+    text-align: center;
+}
+
+@media screen and (orientation: portrait) {
+    header {
+        position: fixed;
+        top: -10px;
+        width: 100%;
+    }
+
+    body {
+        padding-top: 50px; 
+    }
+}

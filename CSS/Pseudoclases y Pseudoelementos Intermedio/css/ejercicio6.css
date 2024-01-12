@@ -1,0 +1,42 @@
+/* Crea una lista (<ul>) donde cada elemento tenga un icono diferente antes del texto, utilizando pseudoelementos ::before. */
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    padding-left: 20px;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+li:nth-child(1)::before {
+    content: '\2022'; 
+    color: #ff0000; 
+    margin-right: 5px; 
+}
+
+li:nth-child(2)::before {
+    content: '\25cf'; 
+    color: #00ff00; 
+    margin-right: 5px; 
+}
+
+li:nth-child(3)::before {
+    content: '\25a0'; 
+    color: #0000ff; 
+    margin-right: 5px; 
+}
+
+li:nth-child(4)::before {
+    content: '\10e1'; 
+    color: #ff9900; 
+    margin-right: 5px;
+}
+
+li:nth-child(5)::before {
+    content: '\I'; 
+    color: #9900ff; 
+    margin-right: 5px; 
+}

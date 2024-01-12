@@ -1,0 +1,14 @@
+/* Haz que las imágenes (<img>) se desenfoquen ligeramente cuando el usuario pasa el mouse sobre ellas y se vuelvan a enfocar cuando se hace clic en ellas. */
+
+img {
+    height: 200px;
+}
+
+img:hover {
+    opacity: .7;
+    transition: all 1s ease;
+}
+
+img:active {
+    opacity: 1;
+}

@@ -1,0 +1,9 @@
+/* Texto sobre Fondo Gradiente: Aplica un fondo con gradiente y coloca texto encima de él. Experimenta con diferentes combinaciones de colores. */
+
+.caja {
+    width: 350px;
+    height: 150px; 
+    background: linear-gradient(to right, #3498db, #3ce74a); 
+    color: white;
+    font-size: 18px;
+}

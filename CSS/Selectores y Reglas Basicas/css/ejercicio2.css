@@ -1,0 +1,15 @@
+/* Estilo de enlaces: Cambia el color y la decoración de texto (subrayado, por ejemplo) de todos los enlaces (<a>) en tu página web. */
+
+a{
+    color: #F00;
+    text-decoration: none;
+    margin: 5px 20px;
+}
+a:focus{
+    color: #0F0;
+}
+a:hover {
+    color: #A0F;
+    text-decoration: underline;
+}
+

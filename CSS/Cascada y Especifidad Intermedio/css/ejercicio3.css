@@ -1,0 +1,5 @@
+/* <!-- Crea una regla CSS para establecer el tamaño de la fuente de un elemento h1 con la clase mi-clase. --> */
+
+.mi-clase h1{
+    font-size: 25px;
+}

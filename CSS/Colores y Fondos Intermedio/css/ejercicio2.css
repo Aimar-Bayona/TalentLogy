@@ -1,0 +1,5 @@
+/* Fondo de Página: Cambia el color de fondo de toda la página utilizando la propiedad background-color. */
+
+body {
+    background-color: aqua;
+}

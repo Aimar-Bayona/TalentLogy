@@ -1,0 +1,36 @@
+/* Creación de un Menú de Navegación Horizontal: Crea un menú de navegación horizontal utilizando una lista desordenada <ul> y cambia el estilo de los elementos de menú cuando se coloquen sobre ellos.  */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background-color: #8a2b82;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+}
+
+li {
+    color: #fff;
+    padding: 15px;
+    transition: background-color 0.3s;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+li:hover {
+    background-color: #b660ae;
+}
+
+
+
+

@@ -1,0 +1,8 @@
+/* Fondo con Patrón Repetido: Utiliza una imagen pequeña como patrón de fondo repetido en un área específica de tu página. */
+
+.caja {
+    height: 400px;
+    width: 800px;
+    background-image: url(https://i.pinimg.com/736x/da/59/16/da5916488567db4e05d29d8bb6aa3367.jpg);
+    background-size: 50px;
+}

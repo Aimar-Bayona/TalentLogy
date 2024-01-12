@@ -1,0 +1,49 @@
+<!-- Foro de Discusión: Construye una interfaz de foro utilizando tarjetas (cards) de Bootstrap para mostrar preguntas y respuestas. Utiliza clases de utilidad para mejorar la legibilidad y estructura del contenido. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foro de Discusión</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-4">
+        <h2 class="text-center mb-4">Foro de Discusión</h2>
+        <div class="card mb-4">
+            <div class="card-body">
+                <h5 class="card-title">Pregunta 1</h5>
+                <p class="card-text">Contenido de la pregunta</p>
+                <small class="text-muted">Publicado por el usuario: X - hace X horas</small>
+            </div>
+        </div>
+        <div class="card mb-4">
+            <div class="card-body">
+                <h5 class="card-title">Respuesta 1</h5>
+                <p class="card-text">Contenido de la respuesta</p>
+                <small class="text-muted">Respuesta por el usuario: X - hace X horas</small>
+            </div>
+        </div>
+        <div class="card mb-4">
+            <div class="card-body">
+                <h5 class="card-title">Respuesta 2</h5>
+                <p class="card-text">Contenido de la respuesta</p>
+                <small class="text-muted">Respuesta por el usuario: X - hace X horas</small>
+            </div>
+        </div>
+        <div class="card mb-4">
+            <div class="card-body">
+                <h5 class="card-title">Haz una Pregunta</h5>
+                <form>
+                    <div class="form-group">
+                        <label for="pregunta">Realiza tu Pregunta</label>
+                        <textarea name="pregunta" id="pregunta" rows="5" class="form-control"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Publicar Pregunta</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

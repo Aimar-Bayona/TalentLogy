@@ -1,0 +1,30 @@
+<!-- Creación de un Menú Desplegable (Dropdown): Crea un menú desplegable personalizado utilizando solo CSS y HTML. Al hacer clic en un elemento, se despliegan opciones adicionales. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Desplegable</title>
+    <link rel="stylesheet" href="../css/ejercicio7.css">
+</head>
+<body>
+    <div class="menu-desplegable">
+        <button id="toggle">Menú Desplegable</button>
+        <ul id="menu" class="desplegable-menu">
+            <li><a href="#">Opción 1</a></li>
+            <li><a href="#">Opción 2</a></li>
+            <li><a href="#">Opción 3</a></li>
+            <li><a href="#">Opción 4</a></li>
+        </ul>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const menuButton = document.getElementById("toggle");
+            const menuList = document.getElementById("menu");
+            menuButton.addEventListener("click", () => menuList.classList.toggle("visible"));
+        });
+    </script>
+</body>
+</html>

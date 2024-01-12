@@ -1,0 +1,5 @@
+/* Cambia el color del texto de los elementos impares de una lista ordenada (<ol>). */
+
+li:nth-child(odd) {
+    color: green;
+}

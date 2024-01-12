@@ -1,0 +1,10 @@
+/* Crea una caja que esté posicionada fijamente en la parte superior y a la izquierda de la ventana del navegador. Este ejercicio te ayudará a comprender el posicionamiento fijo. */
+
+.caja {
+    height: 200px;
+    width: 200px;
+    background-color: #f00;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+}

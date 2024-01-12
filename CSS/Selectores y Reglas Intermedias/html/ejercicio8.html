@@ -1,0 +1,43 @@
+<!-- Diseño de una Galería de Imágenes con Lightbox: Crea una galería de imágenes con miniaturas y un efecto lightbox para ver las imágenes en tamaño completo cuando se hace clic en ellas. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Galería de Imágenes</title>
+    <link rel="stylesheet" href="../css/ejercicio8.css" />
+  </head>
+  <body>
+    <div class="galeria">
+        <div class="imagen" onclick="abrirLightbox('https://e1.pxfuel.com/desktop-wallpaper/507/304/desktop-wallpaper-16k-ultra-4-16k.jpg')">
+            <img src="https://e1.pxfuel.com/desktop-wallpaper/507/304/desktop-wallpaper-16k-ultra-4-16k.jpg" alt="Imagen 1" />
+        </div>
+        <div class="imagen" onclick="abrirLightbox('https://static.vecteezy.com/system/resources/previews/029/847/467/large_2x/hd-wallpaper-beautiful-scenery-ultra-hd-sunset-wallpapers-top-hd-landscape-green-background-4k-8k-16k-high-resolution-and-cinematicgraphy-ai-generated-photo.jpg')">
+            <img src="https://static.vecteezy.com/system/resources/previews/029/847/467/large_2x/hd-wallpaper-beautiful-scenery-ultra-hd-sunset-wallpapers-top-hd-landscape-green-background-4k-8k-16k-high-resolution-and-cinematicgraphy-ai-generated-photo.jpg" alt="Imagen 2" />
+        </div>
+        <div class="imagen" onclick="abrirLightbox('https://e1.pxfuel.com/desktop-wallpaper/333/755/desktop-wallpaper-16k-by-itzinfernoytg.jpg')">
+            <img src="https://e1.pxfuel.com/desktop-wallpaper/333/755/desktop-wallpaper-16k-by-itzinfernoytg.jpg" alt="Imagen 3" />
+        </div>
+
+        <div id="lightbox" class="lightbox" onclick="cerrarLightbox()">
+            <img id="imagenLightbox" src="" alt="Imagen Lightbox" />
+        </div>
+    </div>
+
+    <script>
+      function abrirLightbox(url) {
+        const lightbox = document.getElementById("lightbox")
+        const imagenLightbox = document.getElementById("imagenLightbox")
+
+        imagenLightbox.src = url
+        lightbox.style.display = "flex"      
+      }
+
+      function cerrarLightbox() {
+        const lightbox = document.getElementById("lightbox")
+        lightbox.style.display = "none"
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+/* Crea una caja con un borde de imagen que cambie de color a medida que el usuario pasa el cursor por encima. */
+
+.caja {
+    width: 200px;
+    height: 200px;
+    background-color: #72b8ff;
+    border: 10px solid transparent;
+    border-image: linear-gradient(to right, #ff0, #00f);
+    border-image-slice: 1;
+    transition: filter 0.3s ease; 
+}
+
+.caja:hover {
+    filter: hue-rotate(90deg); 
+}

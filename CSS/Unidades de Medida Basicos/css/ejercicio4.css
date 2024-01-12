@@ -1,0 +1,12 @@
+/* Crea un elemento con un ancho que se ajuste al ancho de su contenedor. */
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+
+.caja{
+    width: 100%;
+    background-color: red;
+}

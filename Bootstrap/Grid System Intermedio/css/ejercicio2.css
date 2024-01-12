@@ -1,0 +1,11 @@
+/* Menú de Navegación con Desplazamiento Suave: Desarrolla un menú de navegación que utilice la rejilla de Bootstrap y que incluya desplazamiento suave a secciones específicas de la página. Asegúrate de que el menú sea completamente responsivo para adaptarse a dispositivos móviles. */
+
+section {
+    padding: 15px 50px;
+}
+
+h2 {
+    color: #343a40;
+    font-weight: bolder;
+    margin-bottom: 15px;
+}

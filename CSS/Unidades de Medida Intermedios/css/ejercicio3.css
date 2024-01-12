@@ -1,0 +1,18 @@
+/* Crea un elemento con un ancho del doble del tamaño de la fuente del elemento padre, pero solo si el tamaño de la fuente es inferior a 16px. */
+
+.caja {
+    width: 150px;
+    background-color: red;
+    font-size: 16px;
+}
+
+.subcaja {
+    background-color: pink;
+    color: black;
+}
+
+@media screen and (max-width: 16px) {
+    .subcaja {
+        width: 2em;
+    }
+}

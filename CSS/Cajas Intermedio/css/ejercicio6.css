@@ -1,0 +1,11 @@
+/* Crea una caja con un borde de imagen degradado que se adapte al tamaño de la caja. */
+
+.caja {
+    width: 200px;
+    height: 200px;
+    background-color: #2e5e8d;
+    padding: 10px;
+    border: 10px solid transparent;
+    border-image: linear-gradient(to right, #f00, #00f) 1;
+    border-image-slice: fill;
+}

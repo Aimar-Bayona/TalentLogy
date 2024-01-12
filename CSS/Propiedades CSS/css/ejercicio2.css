@@ -1,0 +1,10 @@
+/* Crea una caja que esté posicionada 100px desde la parte superior y 100px desde la izquierda de su posición original. Este ejercicio te ayudará a comprender el posicionamiento relativo. */
+
+.caja {
+    height: 200px;
+    width: 200px;
+    background-color: #f00;
+    position: relative;
+    left: 100px;
+    top: 100px;
+}

@@ -1,0 +1,58 @@
+<!-- Galería de Imágenes con Lightbox Responsivo: Crea una galería de imágenes utilizando el sistema de rejilla de Bootstrap para organizar miniaturas. Al hacer clic en una miniatura, debería abrirse un lightbox que muestre la imagen en tamaño completo. Asegúrate de que la galería sea responsiva. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/ejercicio3.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-4">
+                <a href="#img1" data-toggle="modal" data-target="#myModal">
+                    <img src="https://e1.pxfuel.com/desktop-wallpaper/574/986/desktop-wallpaper-fondos-de-pantalla-anime-kawaii-para-pc-ayla-zimmer-on-stella-nova-wonderland-with-cute-kawaii-pc-anime.jpg" class="img-thumbnail" alt="Imagen 1">
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="#img2" data-toggle="modal" data-target="#myModal">
+                    <img src="https://png.pngtree.com/background/20230522/original/pngtree-anime-wallpapers-picture-image_2692381.jpg" class="img-thumbnail" alt="Imagen 2">
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="#img3" data-toggle="modal" data-target="#myModal">
+                    <img src="https://www.xtrafondos.com/descargar.php?id=3721&resolucion=2560x1440" class="img-thumbnail" alt="Imagen 3">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <img src="https://e1.pxfuel.com/desktop-wallpaper/574/986/desktop-wallpaper-fondos-de-pantalla-anime-kawaii-para-pc-ayla-zimmer-on-stella-nova-wonderland-with-cute-kawaii-pc-anime.jpg" id="img1" class="img-fluid" alt="Imagen 1">
+                            <img src="https://png.pngtree.com/background/20230522/original/pngtree-anime-wallpapers-picture-image_2692381.jpg" id="img2" class="img-fluid" alt="Imagen 2">
+                            <img src="https://www.xtrafondos.com/descargar.php?id=3721&resolucion=2560x1440" id="img3" class="img-fluid" alt="Imagen 3">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

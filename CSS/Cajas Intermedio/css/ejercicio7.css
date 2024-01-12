@@ -1,0 +1,41 @@
+/* Crea una caja con un borde de imagen que se mueva a medida que el usuario mueve el cursor. */
+
+.caja {
+    width: 200px;
+    height: 200px;
+    background-color: #2e5e8d;
+    position: relative;
+}
+
+.caja::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border: 5px solid #f00;
+    pointer-events: none;
+}
+
+.caja:hover::before {
+    animation: movimientoBorde 1s infinite linear;
+}
+
+@keyframes movimientoBorde {
+    0% {
+        transform: translate(0, 0);
+    }
+    25% {
+        transform: translate(5px, 0);
+    }
+    50% {
+        transform: translate(0, 5px);
+    }
+    75% {
+        transform: translate(-5px, 0);
+    }
+    100% {
+        transform: translate(0, -5px);
+    }
+}

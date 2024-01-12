@@ -1,0 +1,10 @@
+/* Crea una caja con un borde degradado con diferentes colores en cada lado. */
+
+.caja {
+    width: 200px;
+    height: 200px;
+    background-color: #2e5e8d;
+    border: 10px solid transparent;
+    border-image: linear-gradient(to right, #f00, #00f, #0f0, #ff0);
+    border-image-slice: 1;
+}

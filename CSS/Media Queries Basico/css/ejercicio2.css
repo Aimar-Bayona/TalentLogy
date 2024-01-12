@@ -1,0 +1,11 @@
+/* Utiliza una Media Query para cambiar el tamaño de fuente a 18px cuando el dispositivo esté en orientación horizontal (landscape). */
+
+p {
+    font-size: 32px;
+}
+
+@media (orientation: landscape) {
+    p {
+        font-size: 15px;
+    }
+}
