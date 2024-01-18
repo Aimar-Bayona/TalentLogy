@@ -1,0 +1,59 @@
+<!-- Control de visibilidad: Crea una página con varios elementos y botones que permitan mostrar u ocultar secciones específicas. Utiliza clases y estilos para cambiar la visibilidad de los elementos seleccionados mediante acciones del usuario. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .section {
+            margin-bottom: 20px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        button {
+            padding: 10px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="section" id="section1">
+        <h2>Sección 1</h2>
+        <p>Contenido de la sección 1.</p>
+    </div>
+
+    <div class="section" id="section2">
+        <h2>Sección 2</h2>
+        <p>Contenido de la sección 2.</p>
+    </div>
+
+    <div class="section" id="section3">
+        <h2>Sección 3</h2>
+        <p>Contenido de la sección 3.</p>
+    </div>
+
+    <button onclick="toggleVisibility('section1')">Mostrar/Ocultar Sección 1</button>
+    <button onclick="toggleVisibility('section2')">Mostrar/Ocultar Sección 2</button>
+    <button onclick="toggleVisibility('section3')">Mostrar/Ocultar Sección 3</button>
+
+    <script>
+        function toggleVisibility(sectionId) {
+            const section = document.getElementById(sectionId);
+            section.classList.toggle('hidden');
+        }
+    </script>
+
+</body>
+</html>

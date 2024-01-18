@@ -1,0 +1,55 @@
+<!-- Lista desplegable dependiente: Diseña un formulario con dos listas desplegables, donde la selección en la primera afecta dinámicamente las opciones disponibles en la segunda. Utiliza manipulación del DOM para lograr este comportamiento. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label for="categoria">Selecciona una categoría:</label>
+        <select id="categoria" onchange="actualizarOpciones()">
+            <option value="frutas">Frutas</option>
+            <option value="verduras">Verduras</option>
+            <option value="dulces">Dulces</option>
+        </select>
+
+        <label for="producto">Selecciona un producto:</label>
+        <select id="producto"></select>
+    </form>
+
+    <script>
+        function actualizarOpciones() {
+            const categoriaSeleccionada = document.getElementById("categoria").value;
+            const productoSelect = document.getElementById("producto");
+
+            productoSelect.innerHTML = "";
+
+            if (categoriaSeleccionada === "frutas") {
+                agregarOpcion(productoSelect, "manzana", "Manzana");
+                agregarOpcion(productoSelect, "banana", "Banana");
+                agregarOpcion(productoSelect, "uva", "Uva");
+            } else if (categoriaSeleccionada === "verduras") {
+                agregarOpcion(productoSelect, "zanahoria", "Zanahoria");
+                agregarOpcion(productoSelect, "brocoli", "Brócoli");
+                agregarOpcion(productoSelect, "papa", "Papa");
+            } else if (categoriaSeleccionada === "dulces") {
+                agregarOpcion(productoSelect, "chocolate", "Chocolate");
+                agregarOpcion(productoSelect, "caramelo", "Caramelo");
+                agregarOpcion(productoSelect, "pastel", "Pastel");
+            }
+        }
+
+        function agregarOpcion(select, valor, texto) {
+            const opcion = document.createElement("option");
+            opcion.value = valor;
+            opcion.text = texto;
+            select.add(opcion);
+        }
+
+        actualizarOpciones();
+    </script>
+</body>
+</html>

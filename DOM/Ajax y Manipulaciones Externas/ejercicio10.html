@@ -1,0 +1,83 @@
+<!-- Lista de reproducción de canciones: Crea una página que permita a los usuarios seleccionar una canción de una lista utilizando AJAX para cargar la información de las canciones desde un archivo JSON local. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+
+      select {
+        padding: 8px;
+        margin-bottom: 10px;
+      }
+
+      #informacionCancion {
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Lista de Reproducción</h2>
+
+    <label for="canciones">Selecciona una canción:</label>
+    <select id="canciones" onchange="cargarInformacionCancion()"></select>
+
+    <div id="informacionCancion"></div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () =>
+        cargarListaCanciones()
+      );
+
+      function cargarListaCanciones() {
+        fetch("./ejercicio10.json")
+          .then((response) => response.json())
+          .then((data) => {
+            const listaCanciones = document.getElementById("canciones");
+
+            data.forEach((cancion) => {
+              const opcion = document.createElement("option");
+              opcion.value = cancion.id;
+              opcion.textContent = cancion.titulo;
+              listaCanciones.appendChild(opcion);
+            });
+            cargarInformacionCancion();
+          })
+          .catch((error) =>
+            console.error("Error al cargar la lista de canciones:", error)
+          );
+      }
+
+      function cargarInformacionCancion() {
+        const listaCanciones = document.getElementById("canciones");
+        const informacionCancion = document.getElementById("informacionCancion");
+        const cancionSeleccionadaId = parseInt(listaCanciones.value);
+
+        fetch("./ejercicio10.json")
+          .then((response) => response.json())
+          .then((data) => {
+            const cancionSeleccionada = data.find(cancion => cancion.id == cancionSeleccionadaId);
+
+            if (cancionSeleccionada) {
+              informacionCancion.innerHTML = `
+                    <h3>${cancionSeleccionada.titulo}</h3>
+                    <p>Artista: ${cancionSeleccionada.artista}</p>
+                    <p>Duración: ${cancionSeleccionada.duracion}</p>
+                    <p>Descripción: ${cancionSeleccionada.descripcion}</p>
+                    <a href="${cancionSeleccionada.url}" target="_blank">Reproducir la canción</a>
+                `;
+            } else {
+              informacionCancion.innerHTML = "Canción no encontrada";
+            }
+          })
+          .catch(error => console.error("Error al cargar la información de la canción:", error));
+      }
+    </script>
+  </body>
+</html>

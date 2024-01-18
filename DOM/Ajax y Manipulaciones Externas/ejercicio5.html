@@ -1,0 +1,48 @@
+<!-- Cambio de fondo dinámico: Construye una página web con un botón que, al hacer clic, cambia el color de fondo utilizando una solicitud AJAX a un servicio que devuelve colores aleatorios, como "http://www.colr.org/json/color/random". -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          padding: 20px;
+          text-align: center;
+          transition: background-color 0.5s ease;
+        }
+  
+        #btnCambiarColor {
+          padding: 10px;
+          cursor: pointer;
+        }
+      </style>
+    </head>
+    <body>
+      <h2>Cambio de Fondo Dinámico</h2>
+      <button id="btnCambiarColor" onclick="cambiarColor()">Cambiar Color</button>
+  
+      <script>
+        function cambiarColor() {
+          const uniqueParam = new Date().getTime();
+          const apiUrl = `https://www.colr.org/json/color/random?timestamp=${uniqueParam}`;
+
+          fetch(apiUrl)
+            .then((response) => response.json())
+            .then((data) => {
+              if (data.colors && data.colors.length > 0) {
+                const colorHex = data.colors[0].hex;
+                document.body.style.backgroundColor = `#${colorHex}`;
+              } else {
+                console.error("La respuesta no tiene el formato esperado.");
+              }
+            })
+            .catch((error) => {
+              console.error("Error al obtener color aleatorio:", error);
+            });
+        }
+      </script>
+  </body>
+</html>

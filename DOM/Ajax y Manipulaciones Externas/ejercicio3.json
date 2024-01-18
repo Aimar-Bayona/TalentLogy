@@ -1,0 +1,13 @@
+[
+    {
+      "id": 1,
+      "tarea": "Hacer compras",
+      "completada": false
+    },
+    {
+      "id": 2,
+      "tarea": "Estudiar para el examen",
+      "completada": true
+    }
+  ]
+  

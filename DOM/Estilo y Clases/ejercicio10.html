@@ -1,0 +1,64 @@
+<!-- Cambios de tema personalizables: Diseña una aplicación que permita a los usuarios cambiar el tema de la interfaz entre diferentes opciones. Utiliza clases CSS y el DOM para aplicar dinámicamente estilos según la elección del usuario. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        transition: background-color 0.3s ease;
+        margin: 0;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+      
+      header {
+        transition: background-color 0.3s ease;
+        background-color: #fff;
+        color: #333;
+        padding: 10px;
+        text-align: center;
+      }
+      
+      main {
+        margin-top: 20px;
+      }
+      
+      button {
+        padding: 10px;
+        margin: 5px;
+        cursor: pointer;
+      }
+
+      .dark {
+        background-color: #333;
+        color: #fff;
+      }
+      
+      .dark header {
+        transition: background-color 0.3s ease;
+        background-color: #333;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Cambios de Tema</h1>
+    </header>
+
+    <main>
+      <p>Contenido de la aplicación.</p>
+      <button onclick="cambiarTema()">Cambiar Tema</button>
+    </main>
+
+    <script>
+      function cambiarTema() {
+        const body = document.body;
+        body.classList.toggle("dark");
+      }
+    </script>
+  </body>
+</html>

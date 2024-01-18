@@ -1,0 +1,74 @@
+<!-- Autenticación en tiempo real: Desarrolla un formulario de inicio de sesión que verifica las credenciales del usuario en tiempo real a medida que las ingresan. Utiliza JavaScript para realizar la validación y proporciona retroalimentación inmediata al usuario. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            padding: 8px;
+            margin-bottom: 10px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        #mensaje {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <form id="loginForm">
+        <label for="usuario">Usuario:</label>
+        <input type="text" id="usuario" name="usuario" oninput="validarCredenciales()" required>
+
+        <label for="clave">Contraseña:</label>
+        <input type="password" id="clave" name="clave" oninput="validarCredenciales()" required>
+
+        <button type="submit" disabled>Iniciar Sesión</button>
+    </form>
+
+    <div id="mensaje"></div>
+
+    <script>
+        const usuarioInput = document.getElementById('usuario');
+        const claveInput = document.getElementById('clave');
+        const loginForm = document.getElementById('loginForm');
+        const mensajeDiv = document.getElementById('mensaje');
+
+        function validarCredenciales() {
+            const usuario = usuarioInput.value;
+            const clave = claveInput.value;
+            const esValido = usuario.trim() !== '' && clave.trim() !== '';
+            document.querySelector('button[type="submit"]').disabled = !esValido;
+
+            mensajeDiv.textContent = esValido ? '' : 'Ingresa usuario y contraseña.';
+            mensajeDiv.style.color = "#f00"
+        }
+
+        loginForm.addEventListener('submit', event => {
+            event.preventDefault();
+            mensajeDiv.textContent = 'Inicio de sesión exitoso.';
+            mensajeDiv.style.color = "#080"
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!-- Validación de formulario en tiempo real: Construye un formulario con campos de entrada y utiliza estilos CSS para resaltar los campos que contienen datos incorrectos. Emplea el DOM para actualizar los estilos en tiempo real mientras el usuario completa el formulario. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            padding: 8px;
+            margin-bottom: 10px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        input.invalid {
+            border: 2px solid #ff0000;
+        }
+
+        .error-message {
+            color: #ff0000;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <form id="miFormulario">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" oninput="validarCampo(this)">
+        <span class="error-message" id="nombreError"></span>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" oninput="validarCampo(this)">
+        <span class="error-message" id="emailError"></span>
+
+        <button type="submit" id="enviarBtn" disabled>Enviar</button>
+    </form>
+
+    <script>
+        const formulario = document.getElementById("miFormulario");
+        const enviarBtn = document.getElementById("enviarBtn");
+
+        formulario.addEventListener("submit", function(event) {
+            event.preventDefault();
+            validarFormulario();
+        });
+
+        function validarCampo(input) {
+            const errorSpan = document.getElementById(input.id + "Error");
+
+            if (input.value.trim() === "") {
+                input.classList.add("invalid");
+                errorSpan.textContent = "Este campo es obligatorio.";
+            } else {
+                input.classList.remove("invalid");
+                errorSpan.textContent = "";
+            }
+
+            habilitarBoton();
+        }
+
+        function habilitarBoton() {
+            const inputs = formulario.querySelectorAll("input");
+            enviarBtn.disabled = Array.from(inputs).some(input => input.classList.contains("invalid"));
+        }
+
+        function validarFormulario() {
+            const inputs = formulario.querySelectorAll("input");
+
+            inputs.forEach(function(input) {
+                validarCampo(input);
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!-- Aplicación de Formulario Dinámico: Diseña un formulario que se expanda dinámicamente al hacer clic en un botón "Agregar Campo". Los usuarios deben poder completar y enviar el formulario. Utiliza eventos para gestionar la interacción y manipula el DOM para agregar o eliminar campos. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Formulario Dinámico</h1>
+    <form id="form">
+        <label for="campo1">Campo 1:</label>
+        <input type="text" id="campo1" required>
+        <button type="button" onclick="agregar()">Agregar campo</button>
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+        let cont = 1
+
+        function agregar() {
+            cont++
+
+            const form = document.getElementById("form")
+            const elemento = document.createElement("input")
+            elemento.type = "text"
+            elemento.id = "campo"+ cont
+            elemento.placeholder = "campo" + cont
+            elemento.required = true
+
+            form.insertBefore(elemento, form.lastElementChild)
+        }
+    </script>
+</body>
+</html>

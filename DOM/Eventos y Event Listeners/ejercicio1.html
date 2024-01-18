@@ -1,0 +1,20 @@
+<!-- Cambios dinámicos de estilo: Crea una página web con un botón que, al hacer clic, cambie dinámicamente el color de fondo de un elemento HTML utilizando JavaScript y estilos en el DOM. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="cambioColor()">Cambiar color</button>
+
+    <script>
+        function cambioColor() {
+            const body = document.body
+            body.style.backgroundColor = "#f00"   
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!-- Selección condicional: Construye un formulario que, al seleccionar una opción en un campo, modifica dinámicamente las opciones disponibles en otro campo. Utiliza el DOM para lograr este comportamiento basado en la selección del usuario. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        select, input {
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <form id="formulario">
+        <label for="categoria">Categoría:</label>
+        <select id="categoria" onchange="actualizarOpciones()">
+            <option value="frutas">Frutas</option>
+            <option value="verduras">Verduras</option>
+        </select>
+
+        <label for="producto">Producto:</label>
+        <select id="producto" required>
+            <option value="manzana" data-categoria="frutas">Manzana</option>
+            <option value="banana" data-categoria="frutas">Banana</option>
+            <option value="zanahoria" data-categoria="verduras">Zanahoria</option>
+            <option value="brocoli" data-categoria="verduras">Brócoli</option>
+        </select>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            actualizarOpciones();
+        });
+
+        function actualizarOpciones() {
+            const categoria = document.getElementById('categoria');
+            const producto = document.getElementById('producto');
+            const categoriaSeleccionada = categoria.value;
+
+            Array.from(producto.options).forEach(option => {
+                option.disabled = (option.getAttribute('data-categoria') !== categoriaSeleccionada);
+            });
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!-- Temporizador con Eventos: Crea un temporizador que comienza a contar cuando se carga la página. Muestra una alerta al llegar a cero. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function alerta() {
+            alert("Se acabo el tiempo")
+        }
+
+        function iniciar(tiempo) {
+            const tiempoMS = tiempo * 1000
+            setTimeout(alerta, tiempoMS);
+            
+        }
+
+        window.onload = () => {
+            iniciar(2)
+        }
+    </script>
+</body>
+</html>

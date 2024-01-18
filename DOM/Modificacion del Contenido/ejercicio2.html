@@ -1,0 +1,23 @@
+<!-- Agregar un Nuevo Elemento: Crea un nuevo párrafo (<p>) y agrégalo al final del cuerpo (<body>) de la página. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>parrafo 1</p>
+    <p>parrafo 2</p>
+
+    <script>
+        const body = document.body
+        const pNuevo = document.createElement('p')
+        pNuevo.textContent = "parrafo nuevo"
+
+        body.appendChild(pNuevo)
+
+    </script>
+</body>
+</html>

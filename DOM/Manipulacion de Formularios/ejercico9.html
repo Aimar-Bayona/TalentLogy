@@ -1,0 +1,103 @@
+<!-- Subida de archivos con barra de progreso: Diseña un formulario que permita a los usuarios cargar archivos y muestra una barra de progreso durante la subida. Utiliza JavaScript para gestionar la carga de archivos y actualizar visualmente el progreso. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      progress {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+
+      #preview {
+        max-width: 300px;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="miFormulario">
+      <label for="archivo">Selecciona un archivo:</label>
+      <input
+        type="file"
+        id="archivo"
+        name="archivo"
+        accept=".jpg, .jpeg, .png"
+        onchange="mostrarVistaPrevia()"
+      />
+      <progress value="0" max="100" id="barraProgreso"></progress>
+      <div id="preview"></div>
+      <button type="button" onclick="subirArchivo()">Subir Archivo</button>
+    </form>
+
+    <script>
+      function mostrarVistaPrevia() {
+        const archivoInput = document.getElementById("archivo");
+        const previewDiv = document.getElementById("preview");
+        const archivos = archivoInput.files;
+
+        if (archivos.length > 0) {
+          const archivo = archivos[0];
+          const lector = new FileReader();
+
+          lector.onload = function (e) {
+            const imagen = new Image();
+            imagen.src = e.target.result;
+            imagen.alt = archivo.name;
+            previewDiv.innerHTML = "";
+            previewDiv.appendChild(imagen);
+          };
+
+          lector.readAsDataURL(archivo);
+        }
+      }
+
+      function subirArchivo() {
+        const archivoInput = document.getElementById("archivo");
+        const barraProgreso = document.getElementById("barraProgreso");
+
+        const archivos = archivoInput.files;
+
+        if (archivos.length > 0) {
+          const archivo = archivos[0];
+          const formData = new FormData();
+          const xhr = new XMLHttpRequest();
+          formData.append("archivo", archivo);
+
+          xhr.upload.addEventListener("progress", function (e) {
+            if (e.lengthComputable) {
+              const porcentaje = (e.loaded / e.total) * 100;
+              barraProgreso.value = porcentaje;
+            }
+          });
+
+          xhr.onreadystatechange = function () {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+              if (xhr.status === 200) {
+                alert("Archivo subido exitosamente.");
+              } else {
+                alert("Error al subir el archivo.");
+              }
+            }
+          };
+
+          xhr.open("POST", "https://jsonplaceholder.typicode.com/photos", true);
+          xhr.send(formData);
+        }
+      }
+    </script>
+  </body>
+</html>

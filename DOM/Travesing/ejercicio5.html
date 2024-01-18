@@ -1,0 +1,62 @@
+<!-- Validación de Formulario en Tiempo Real: Implementa la validación de formularios en tiempo real utilizando eventos y mensajes de error dinámicos. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form onsubmit="validar()">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" oninput="validarNombre()">
+        <span id="errorNombre" class="error"></span>
+
+        <br>
+
+        <label for="correo">Correo:</label>
+        <input type="email" id="correo" oninput="validarCorreo()">
+        <span id="errorCorreo" class="error"></span>
+
+        <br>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+        function validarNombre() {
+            const nombre = document.getElementById('nombre')
+            const error = document.getElementById('errorNombre')
+
+            if(nombre.value.trim() == ''){
+                error.textContent = "Inserte nombre"
+            } else {
+                error.textContent = ""
+            }
+            advertencia(error)
+        }
+
+        function validarCorreo() {
+            const correo = document.getElementById("correo")
+            const error = document.getElementById("errorCorreo")
+            const requisitos = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+            if(!requisitos.test(correo.value)) {
+                error.textContent = 'Ingrese un correo valido'
+            } else {
+                error.textContent = ""
+            }
+            advertencia(error)
+        }
+
+        function advertencia(elemento) {
+            elemento.style.color = "#f00"
+        }
+
+        function validar() {
+            validarNombre()
+            validarCorreo()
+        }
+    </script>
+</body>
+</html>

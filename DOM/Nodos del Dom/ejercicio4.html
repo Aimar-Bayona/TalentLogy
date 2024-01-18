@@ -1,0 +1,25 @@
+<!-- Crear y Manipular Listas: Crea una lista (ul o ol) vacía en el DOM con JavaScript. Luego, agrega elementos a la lista dinámicamente. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="content"></div>
+
+    <script>
+        let lista = document.createElement("ul")
+        let content = document.getElementById("content")
+        content.appendChild(lista)
+        let elementos = ["X", "Y", "Z"]
+        elementos.forEach(elem => {
+            let item = document.createElement("li")
+            item.textContent = elem
+            lista.appendChild(item)
+        })
+    </script>
+</body>
+</html>

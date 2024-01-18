@@ -1,0 +1,78 @@
+<!-- Ordenar elementos arrastrables: Crea una lista de elementos que puedan ser reordenados mediante arrastre. Implementa estilos para resaltar el elemento en movimiento y utiliza el DOM para gestionar el cambio de posición de los elementos en la lista. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        li {
+            background-color: #ddd;
+            padding: 10px;
+            margin: 5px 0;
+            cursor: grab;
+            user-select: none;
+        }
+
+        .dragging {
+            background-color: #aaf;
+        }
+    </style>
+</head>
+<body>
+
+    <ul id="sortable-list">
+        <li draggable="true" ondragstart="dragStart(event)">Elemento 1</li>
+        <li draggable="true" ondragstart="dragStart(event)">Elemento 2</li>
+        <li draggable="true" ondragstart="dragStart(event)">Elemento 3</li>
+        <li draggable="true" ondragstart="dragStart(event)">Elemento 4</li>
+        <li draggable="true" ondragstart="dragStart(event)">Elemento 5</li>
+    </ul>
+
+    <script>
+        let draggedItem = null;
+
+        function dragStart(e) {
+            draggedItem = e.target;
+            e.dataTransfer.effectAllowed = 'move';
+            e.dataTransfer.setData('text/html', draggedItem.innerHTML);
+        }
+
+        function dragOver(e) {
+            e.preventDefault();
+            const target = e.target;
+
+            if (target !== draggedItem && target.nodeName == 'LI') {
+                const rect = target.getBoundingClientRect();
+                const next = (e.clientY - rect.top) / (rect.bottom - rect.top) > 0.5;
+                target.parentElement.insertBefore(
+                    draggedItem,
+                    next ? target.nextElementSibling : target
+                );
+            }
+        }
+
+        function dragEnd() {
+            draggedItem = null;
+        }
+
+        document.getElementById('sortable-list').addEventListener('dragover', dragOver);
+        document.getElementById('sortable-list').addEventListener('dragend', dragEnd);
+    </script>
+
+</body>
+</html>

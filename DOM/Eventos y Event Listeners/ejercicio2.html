@@ -1,0 +1,43 @@
+<!-- Galería de Imágenes con Navegación: Crea una galería de imágenes con botones "Anterior" y "Siguiente". Cambia la imagen principal al hacer clic en los botones. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="galeria">
+      <img
+        src="https://www.gameinformer.com/s3/files/styles/body_default/s3/legacy-images/imagefeed/Hell%20Needs%20More%20Good%20Ideas%20/5226.dantetop.jpg"
+        alt=""
+        id="imagen"
+      />
+      <br />
+      <button class="boton" onclick="cambiarImagen(-1)">Anterior</button>
+      <button class="boton" onclick="cambiarImagen(1)">Siguiente</button>
+    </div>
+
+    <script>
+      let index = 0;
+      const imagenes = [
+        "https://www.gameinformer.com/s3/files/styles/body_default/s3/legacy-images/imagefeed/Hell%20Needs%20More%20Good%20Ideas%20/5226.dantetop.jpg",
+        "https://libero.cronosmedia.glr.pe/original/2022/04/14/62587f11ea80e22fb844615f.jpg",
+        "https://images.ladbible.com/resize?type=jpeg&quality=70&width=720&fit=contain&gravity=null&url=https://s3-images.gamingbible.com/s3/content/9d706f4560e6b15bd192399136f55016.png",
+      ];
+
+      function cambiarImagen(img) {
+        index += img;
+        if (index < 0) {
+          index = imagenes.length - 1;
+        } else if (index >= imagenes.length) {
+            index = 0
+        }
+
+        const imagenActual = document.getElementById("imagen")
+        imagenActual.src = imagenes[index]
+      }
+    </script>
+  </body>
+</html>

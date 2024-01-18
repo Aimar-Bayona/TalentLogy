@@ -1,0 +1,60 @@
+<!-- Actualización de contador en tiempo real: Crea una página con un botón y un contador. Al hacer clic en el botón, utiliza AJAX para incrementar el contador en el servidor (puedes usar un servicio como https://beeceptor.com/ para simular el servidor). -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        button {
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        #contador {
+            font-size: 24px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Contador en Tiempo Real</h2>
+    <button onclick="incrementarContador()">Incrementar Contador</button>
+    <div id="contador">0</div>
+
+    <script>
+        let contador = 0;
+
+        function incrementarContador() {
+            fetch('https://contador.free.beeceptor.com', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ incrementar: true })
+            })
+            .then(response => response.json())
+            .then(data => {
+                contador = data.contador;
+                actualizarContador();
+            })
+            .catch(error => {
+                console.error('Error al incrementar el contador:', error);
+            });
+        }
+
+        function actualizarContador() {
+            const contadorElement = document.getElementById('contador');
+            contadorElement.textContent = contador;
+        }
+    </script>
+
+</body>
+</html>

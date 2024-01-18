@@ -1,0 +1,25 @@
+[
+    {
+        "id": 1,
+        "titulo": "Back in Black",
+        "artista": "AC/DC",
+        "duracion": "4:14",
+        "descripcion": "descripcion de la cancion.",
+        "url": "https://youtu.be/pAgnJDJN4VA"
+    }, {
+        "id": 2,
+        "titulo": "No more tears",
+        "artista": "Ozzy Osbourne",
+        "duracion": "5:58",
+        "descripcion": "descripcion de la cancion.",
+        "url": "https://youtu.be/CprfjfN5PRs"
+    }, {
+        "id": 3,
+        "titulo": "Sympathy for the devil",
+        "artista": "The Rolling Stones",
+        "duracion": "6:22",
+        "descripcion": "descripcion de la cancion.",
+        "url": "https://youtu.be/GgnClrx8N2k"
+    }
+    
+]

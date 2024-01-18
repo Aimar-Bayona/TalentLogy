@@ -1,0 +1,82 @@
+<!-- Validación de formulario básica: Crea un formulario con campos obligatorios y utiliza JavaScript para verificar que todos los campos requeridos estén completos antes de permitir el envío. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            padding: 8px;
+            margin-bottom: 10px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .error-message {
+            color: red;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <form id="myForm" onsubmit="return validarFormulario()">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre">
+        <span class="error-message" id="errorNombre"></span>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+        <span class="error-message" id="errorEmail"></span>
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+        function validarFormulario() {
+            const nombre = document.getElementById('nombre');
+            const email = document.getElementById('email');
+            const errorNombre = document.getElementById('errorNombre');
+            const errorEmail = document.getElementById('errorEmail');
+            let valido = true;
+
+            errorNombre.textContent = '';
+            errorEmail.textContent = '';
+
+            if (nombre.value.trim() == '') {
+                errorNombre.textContent = 'El nombre es obligatorio.';
+                valido = false;
+            }
+
+            if (email.value.trim() == '') {
+                errorEmail.textContent = 'El email es obligatorio.';
+                valido = false;
+            } else if (!esValidoCorreo(email.value)) {
+                errorEmail.textContent = 'Ingresa un email válido.';
+                valido = false;
+            }
+
+            return valido;
+        }
+
+        function esValidoCorreo(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+    </script>
+</body>
+</html>

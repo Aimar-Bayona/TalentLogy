@@ -1,0 +1,42 @@
+<!-- Lista de Tareas Interactiva: Crea una lista de tareas con checkboxes. Utiliza event listeners para marcar y desmarcar las tareas como completadas. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .completada {
+        text-decoration: line-through;
+        color: #ff0000;
+      }
+    </style>
+  </head>
+  <body>
+    <ul id="lista">
+      <li><input type="checkbox" id="tarea1" />Tarea 1</li>
+      <li><input type="checkbox" id="tarea2" />Tarea 2</li>
+      <li><input type="checkbox" id="tarea3" />Tarea 3</li>
+    </ul>
+
+    <script>
+      function completado(event) {
+        const id = event.target.id;
+        const elemento = document.getElementById(id);
+
+        if (elemento.checked) {
+          alert(`¡Tarea completada: ${elemento.parentElement.textContent.trim()}!`);
+          elemento.parentElement.classList.add("completada");
+        } else {
+          elemento.parentElement.classList.remove("completada");
+        }
+      }
+
+      const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+      checkboxes.forEach((check) => {
+        check.addEventListener("change", completado);
+      });
+    </script>
+  </body>
+</html>

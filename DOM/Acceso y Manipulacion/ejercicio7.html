@@ -1,0 +1,115 @@
+<!-- Calculadora Interactiva: Desarrolla una calculadora interactiva con botones para números y operadores. Utiliza eventos para manejar las pulsaciones de teclas y actualiza dinámicamente el DOM para mostrar los resultados. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Interactiva</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        #calculadora {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            max-width: 300px;
+            margin: 50px auto;
+        }
+
+        button {
+            padding: 10px;
+            font-size: 18px;
+            grid-column: span 1;
+        }
+
+        #resultado {
+            margin-top: 20px;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div id="calculadora">
+        <button onclick="agregarNumero(7)">7</button>
+        <button onclick="agregarNumero(8)">8</button>
+        <button onclick="agregarNumero(9)">9</button>
+        <button onclick="agregarOperador('/')">/</button>
+        <button onclick="agregarNumero(4)">4</button>
+        <button onclick="agregarNumero(5)">5</button>
+        <button onclick="agregarNumero(6)">6</button>
+        <button onclick="agregarOperador('*')">*</button>
+        <button onclick="agregarNumero(1)">1</button>
+        <button onclick="agregarNumero(2)">2</button>
+        <button onclick="agregarNumero(3)">3</button>
+        <button onclick="agregarOperador('-')">-</button>
+        <button onclick="agregarNumero(0)">0</button>
+        <button onclick="agregarDecimal()">.</button>
+        <button onclick="calcular()">=</button>
+        <button onclick="agregarOperador('+')">+</button>
+        <button onclick="limpiar()">C</button>
+    </div>
+
+    <div id="resultado">0</div>
+
+    <script>
+        let input = ''
+        let resultado = false
+
+        function actualizar() {
+            const resultadoActual = document.getElementById("resultado")
+            resultadoActual.innerText = input
+        }
+
+        function agregarNumero(numero) {
+            if(resultado) {
+                input = ''
+                resultado = false
+            }
+            input += numero
+            actualizar()
+        }
+
+        function agregarOperador(operador) {
+            if(resultado) {
+                resultado = false
+            }
+            const ultimoCaracter = input.slice(-1)
+            if(!['+','-','*','/'].includes(ultimoCaracter)){
+                input += operador
+                actualizar()
+            }
+        }
+
+        function agregarDecimal() {
+            if(resultado) {
+                input = '0.'
+                resultado = false
+            } else if (!input.includes('.')) {
+                input += '.'
+                actualizar()
+            }
+        }
+
+        function calcular() {
+            try {
+                input = eval(input).toString()
+                resultado = true
+                actualizar()
+            } catch (error) {
+                input = ''
+                actualizar()
+            }
+        }
+
+        function limpiar() {
+            input = ''
+            resultado = false
+            actualizar()
+        }
+    </script>
+</body>
+</html>

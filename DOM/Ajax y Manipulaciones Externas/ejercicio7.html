@@ -1,0 +1,79 @@
+<!-- Sistema de comentarios básico: Crea un formulario de comentarios que, al enviar, utiliza AJAX para agregar el comentario a una lista en la página sin recargar. Puedes almacenar los comentarios localmente o utilizar un servicio como Beeceptor para simular el servidor. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          padding: 20px;
+          text-align: center;
+        }
+  
+        #comentario {
+          width: 100%;
+          margin-bottom: 10px;
+        }
+  
+        #btnEnviar {
+          padding: 10px;
+          cursor: pointer;
+        }
+  
+        #listaComentarios {
+          text-align: left;
+          margin-top: 20px;
+        }
+      </style>
+    </head>
+    <body>
+      <h2>Sistema de Comentarios</h2>
+  
+      <label for="comentario">Deja tu comentario:</label>
+      <textarea id="comentario" rows="4" placeholder="Escribe tu comentario"></textarea>
+      <br />
+      <button id="btnEnviar" onclick="agregarComentario()">Enviar Comentario</button>
+  
+      <div id="listaComentarios"></div>
+  
+      <script>
+        function agregarComentario() {
+          const comentarioInput = document.getElementById("comentario");
+          const comentario = comentarioInput.value.trim();
+  
+          if (comentario != "") {
+            const listaComentarios = document.getElementById("listaComentarios");
+  
+            fetch("https://prueba-beeceptor.free.beeceptor.com/comentarios", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({ comentario }),
+            })
+              .then((response) => response.json())
+              .then((data) => {
+                mostrarComentario(data.comentario);
+            })
+              .catch((error) => {
+                console.error("Error al agregar el comentario:", error);
+              });
+  
+            comentarioInput.value = "";
+          } else {
+            alert("Por favor, escribe tu comentario antes de enviar.");
+          }
+        }
+  
+        function mostrarComentario(comentario) {
+          const listaComentarios = document.getElementById("listaComentarios");
+          const nuevoComentario = document.createElement("p");
+          nuevoComentario.textContent = comentario;
+          listaComentarios.appendChild(nuevoComentario);
+        }
+      </script>    
+</body>
+</html>

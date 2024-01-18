@@ -1,0 +1,26 @@
+<!-- Estilo Dinámico al Pasar el Ratón: Asigna event listeners a varios elementos. Cambia el estilo de cada elemento cuando el ratón está sobre él y restaura el estilo original cuando el ratón sale. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+            height: 100px;
+            width: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+
+    <script>
+            const contenido = document.getElementById("container")
+            contenido.addEventListener("mouseenter", () => contenido.style.backgroundColor = "#0f0")
+            contenido.addEventListener("mouseleave", () => contenido.style.backgroundColor = "#f00")
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!-- Árbol de Contenidos Interactivo: Utiliza la estructura de árbol del DOM para crear un árbol de contenidos interactivo. Permite expandir y contraer secciones. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .nodo {
+            margin-left: 20px;
+            display: none;
+        }
+
+        .nodo.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <ul id="arbol">
+        <li>
+            <span class="nodo-toggle" onclick="toggleNodo(1)">Toggle Nodo 1</span>
+            <ul class="nodo" id="nodo1">
+                <li>Nodo 1.1</li>
+                <li>Nodo 1.2</li>
+            </ul>
+        </li>
+        <li>
+            <span class="nodo-toggle" onclick="toggleNodo(2)">Toggle Nodo 2</span>
+            <ul class="nodo" id="nodo2">
+                <li>Nodo 2.1</li>
+                <li>Nodo 2.2</li>
+            </ul>
+        </li>
+    </ul>
+
+    <script>
+        function toggleNodo(nodoNumber) {
+            const nodo = document.getElementById(`nodo${nodoNumber}`);
+            nodo.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

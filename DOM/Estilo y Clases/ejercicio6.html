@@ -1,0 +1,93 @@
+<!-- Menú de navegación responsive: Implementa un menú de navegación que se ajuste de forma dinámica según el tamaño de la pantalla. Utiliza clases CSS para controlar la visibilidad y apariencia del menú en dispositivos móviles y de escritorio. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #555;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            margin: 0 5px;
+        }
+
+        .menu-icon {
+            display: none;
+            cursor: pointer;
+        }
+
+        @media screen and (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav a {
+                margin: 5px 0;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+
+            .menu-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .menu-links.show {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Menú de Navegación</h1>
+    </header>
+
+    <nav>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        <div class="menu-links">
+            <a href="#">Inicio</a>
+            <a href="#">Servicios</a>
+            <a href="#">Acerca de</a>
+            <a href="#">Contacto</a>
+        </div>
+    </nav>
+
+    <script>
+        function toggleMenu() {
+            const menuLinks = document.querySelector('.menu-links');
+            menuLinks.classList.toggle('show');
+        }
+    </script>
+
+</body>
+</html>

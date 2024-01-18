@@ -1,0 +1,27 @@
+<!-- Actualizar Contenido de Formulario: Crea un formulario simple y utiliza JavaScript para actualizar dinámicamente el contenido en tiempo real mientras el usuario escribe. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form >
+        <label for="">Ingrese texto:</label>
+        <input type="text" id="texto" oninput="actualizar()">
+    </form>
+
+    <div id="contenido"></div>
+
+    <script>
+        function actualizar() {
+            const input = document.getElementById("texto")
+            const contenido = document.getElementById("contenido")
+
+            contenido.textContent = "Contenido actualizado: " + input.value 
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!-- Galería de Imágenes con Navegación: Construye una galería de imágenes con botones de navegación. Permite que los usuarios pasen de una imagen a otra sin recargar la página. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="galeria">
+        <img id="imagen" src="https://img.europapress.es/fotoweb/fotonoticia_20210103170018_640.jpg">
+        <br>
+        <button onclick="anterior()">anterior</button>
+        <button onclick="siguiente()">siguiente</button>
+    </div>
+
+    <script>
+        const images = ["https://img.europapress.es/fotoweb/fotonoticia_20210103170018_640.jpg", "https://www.mipisoenmadrid.com/wp-content/uploads/2017/02/vikingos-casa-de-ragnar-lothbrok-01.jpg", "https://s3.abcstatics.com/media/ocio/tv/2015/12/29/v/curiosidades-serie-vikingos--510x287.jpg", "https://cadenaser.com/resizer/4oY8gyVnmCJ2ecUbQlmqTC-RRzU=/736x414/filters:format(jpg):quality(70):focal(311x195:321x205)/cloudfront-eu-central-1.images.arcpublishing.com/prisaradio/LCFD66SF65ML3IKZBAQJIZQG7I.jpg"];
+        let index = 0;
+        const elementoImagen = document.getElementById("imagen");
+
+        function mostrar() {
+            elementoImagen.src = images[index];
+        }
+
+        function anterior() {
+            index = (index - 1 + images.length) % images.length;
+            mostrar();
+        }
+
+        function siguiente() {
+            index = (index + 1) % images.length;
+            mostrar();
+        }
+
+        mostrar();
+    </script>
+</body>
+</html>

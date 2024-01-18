@@ -1,0 +1,59 @@
+<!-- Lista de usuarios con API externa: Utiliza AJAX para obtener datos de un servicio de prueba de usuarios, como "https://jsonplaceholder.typicode.com/users", y muestra la lista de usuarios en tu página. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        #usuarios {
+            text-align: left;
+        }
+
+        .usuario {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Lista de Usuarios</h2>
+    <div id="usuarios"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => obtenerUsuarios());
+
+        function obtenerUsuarios() {
+            fetch('https://jsonplaceholder.typicode.com/users')
+                .then(response => response.json())
+                .then(data => mostrarUsuarios(data))
+                .catch(error => {
+                    console.error('Error al obtener la lista de usuarios:', error);
+                });
+        }
+
+        function mostrarUsuarios(usuarios) {
+            const usuariosDiv = document.getElementById('usuarios');
+
+            usuarios.forEach(usuario => {
+                const usuarioElement = document.createElement('div');
+                usuarioElement.classList.add('usuario');
+                usuarioElement.innerHTML = `
+                    <h3>${usuario.name}</h3>
+                    <p><strong>Correo:</strong> ${usuario.email}</p>
+                    <p><strong>Nombre de usuario:</strong> ${usuario.username}</p>
+                    <p><strong>Dirección:</strong> ${usuario.address.city}, ${usuario.address.street}, ${usuario.address.suite}</p>
+                    <hr>
+                `;
+                usuariosDiv.appendChild(usuarioElement);
+            });
+        }
+    </script>
+    
+</body>
+</html>

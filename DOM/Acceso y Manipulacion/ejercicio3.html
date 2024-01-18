@@ -1,0 +1,57 @@
+<!-- Reproductor de Música Interactivo: Desarrolla un reproductor de música interactivo. Permite a los usuarios reproducir, pausar y cambiar de canción. Muestra dinámicamente el título y el artista de la canción actualizando el DOM. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reproductor de Música</title>
+</head>
+<body>
+    <div id="player">
+        <h1>Reproductor de Música</h1>
+        <p id="songInfo">Título: - Artista: -</p>
+        <audio id="audioPlayer" controls>
+            <source src="./music/AC_DC - Back In Black (Official Video)(MP3_160K).mp3" type="audio/mp3">
+            Tu navegador no soporta la etiqueta de audio.
+        </audio>
+        <button onclick="playPause()">Reproducir/Pausar</button>
+        <button onclick="nextSong()">Siguiente Canción</button>
+    </div>
+
+    <script>
+        const audioPlayer = document.getElementById("audioPlayer");
+        const songInfo = document.getElementById("songInfo");
+        const songs = [
+            { title: "Back In Black", artist: "AC/DC", src: "./music/AC_DC - Back In Black (Official Video)(MP3_160K).mp3" },
+            { title: "Highway to Hell", artist: "AC/DC", src: "./music/AC_DC - Highway to Hell (Official Video)(MP3_160K).mp3" },
+        ];
+
+        let currentSongIndex = 0;
+
+        function playPause() {
+            if (audioPlayer.paused) {
+                audioPlayer.play();
+            } else {
+                audioPlayer.pause();
+            }
+        }
+
+        function nextSong() {
+            currentSongIndex = (currentSongIndex + 1) % songs.length;
+            loadSong();
+        }
+
+        function loadSong() {
+            const currentSong = songs[currentSongIndex];
+            audioPlayer.src = currentSong.src;
+            songInfo.textContent = `Título: ${currentSong.title} - Artista: ${currentSong.artist}`;
+            audioPlayer.play();
+        }
+
+        audioPlayer.addEventListener("ended", nextSong);
+
+        loadSong();
+    </script>
+</body>
+</html>

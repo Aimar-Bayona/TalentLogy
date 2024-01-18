@@ -1,0 +1,82 @@
+<!-- Consulta de clima: Diseña una aplicación simple que permita a los usuarios ingresar una ciudad y obtenga información sobre el clima utilizando la API gratuita de OpenWeatherMap (https://openweathermap.org/current). -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        text-align: center;
+      }
+
+      #inputCiudad {
+        padding: 8px;
+        margin-bottom: 10px;
+      }
+
+      #btnConsultar {
+        padding: 10px;
+        cursor: pointer;
+      }
+
+      #climaResultado {
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Consulta de Clima</h2>
+
+    <label for="inputCiudad">Ingrese una ciudad:</label>
+    <input type="text" id="inputCiudad" placeholder="Ej. Buenos Aires" />
+    <button id="btnConsultar" onclick="consultarClima()">
+      Consultar Clima
+    </button>
+
+    <div id="climaResultado"></div>
+
+    <script>
+      function consultarClima() {
+        const ciudadInput = document.getElementById("inputCiudad");
+        const ciudad = ciudadInput.value.trim();
+
+        if (ciudad != "") {
+          const apiKey = "a1d9baea987122df87d84b3e8dddd420";
+          const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${apiKey}`;
+
+          fetch(apiUrl)
+            .then((response) => response.json())
+            .then((data) => {
+              mostrarResultado(data);
+            })
+            .catch((error) => {
+              console.error("Error al obtener el clima:", error);
+              mostrarError();
+            });
+        } else {
+          alert("Por favor, ingrese una ciudad.");
+        }
+      }
+
+      function mostrarResultado(data) {
+        const climaResultado = document.getElementById("climaResultado");
+        const temperaturaKelvin = data.main.temp;
+        const ciudad = data.name;
+        const temperaturaCelsius = temperaturaKelvin - 273.15;
+        climaResultado.innerHTML = `<p>La temperatura en ${ciudad} es ${temperaturaCelsius.toFixed(
+          2
+        )}°C.</p>`;
+      }
+
+      function mostrarError() {
+        const climaResultado = document.getElementById("climaResultado");
+        climaResultado.innerHTML =
+          "<p>Error al obtener el clima. Por favor, inténtelo nuevamente.</p>";
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+<!-- Visualizador de Datos en Tabla: Construye un visualizador de datos en forma de tabla. Los usuarios pueden agregar y eliminar filas, y la tabla debe actualizarse en consecuencia. Utiliza eventos para gestionar la interacción del usuario. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Visualizador de Datos</h1>
+    <table id="tabla">
+        <thead>
+            <tr>
+                <th>X</th>
+                <th>Y</th>
+                <th>Z</th>
+                <th>Borrar</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <button onclick="agregar()">Agregar</button>
+
+    <script>
+        function agregar() {
+            const tabla = document.querySelector("#tabla tbody")
+            const nuevaFila = document.createElement("tr")
+            const c1 = document.createElement("td")
+            c1.innerHTML = `<input type="text" required>`
+            const c2 = document.createElement("td")
+            c2.innerHTML = `<input type="text" required>`
+            const c3 = document.createElement("td")
+            c3.innerHTML = `<input type="text" required>`
+            const c4 = document.createElement("td")
+            c4.innerHTML = `<button onclick="eliminar(this)">Eliminar</button>`
+
+            nuevaFila.appendChild(c1)
+            nuevaFila.appendChild(c2)
+            nuevaFila.appendChild(c3)
+            nuevaFila.appendChild(c4)
+
+            tabla.appendChild(nuevaFila)
+        }
+
+        function eliminar(button) {
+            const fila = button.parentNode.parentNode;
+            fila.parentNode.removeChild(fila);
+        }
+    </script>
+</body>
+</html>

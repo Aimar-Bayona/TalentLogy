@@ -1,0 +1,26 @@
+<!-- Agregar y Eliminar Elementos: Crea un nuevo elemento (por ejemplo, un párrafo o una lista) dinámicamente con JavaScript y agrégalo al DOM. Luego, elimina un elemento existente. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="content">
+        <p id="texto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt commodi rerum iure voluptates amet veniam tempore quam. Reiciendis qui sequi eaque aliquid quia adipisci sapiente. Doloremque porro earum ratione quasi?</p>
+    </div>
+        
+    <script>
+        let nuevoTexto = document.createElement("p")
+        nuevoTexto.textContent = "Elemento creado"
+
+        let content = document.getElementById("content")
+        content.appendChild(nuevoTexto)
+
+        let borrarTexto = document.getElementById("texto")
+        content.removeChild(borrarTexto)
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!-- Actualización de Contenido en Tiempo Real: Utiliza JavaScript para actualizar dinámicamente el contenido de tu página en tiempo real. Esto podría ser información como la hora actual, la temperatura o cualquier dato que pueda cambiar. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="hora"></p>
+
+    <script>
+        function actualizar() {
+            const horaActual = new Date()
+            const hora = horaActual.getHours()
+            const minutos = horaActual.getMinutes()
+            const segundos = horaActual.getSeconds()
+            const milisegundos = horaActual.getMilliseconds()
+
+            const formatoHora = `${hora}:${minutos < 10 ? '0' : ''}${minutos}:${segundos < 10 ? '0' : ''}${segundos}:${milisegundos < 10 ? '0' : ''}${milisegundos}`
+            
+            document.getElementById("hora").innerHTML = `<strong>Hora actual:</strong> ${formatoHora}`
+        }
+
+        setInterval(actualizar, 100)
+    </script>
+</body>
+</html>

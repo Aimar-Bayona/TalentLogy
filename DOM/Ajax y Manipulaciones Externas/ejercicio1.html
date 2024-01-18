@@ -1,0 +1,66 @@
+<!-- Consulta de datos externos: Crea una página web con un botón que, al hacer clic, realiza una solicitud AJAX para obtener datos desde el servicio gratuito JSONPlaceholder (https://jsonplaceholder.typicode.com/posts) y muestra el resultado en la página. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        button {
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        #resultado {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <button onclick="realizarConsulta()">Obtener Datos</button>
+    <div id="resultado"></div>
+
+    <script>
+        const resultadoDiv = document.getElementById('resultado');
+        function realizarConsulta() {
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', 'https://jsonplaceholder.typicode.com/posts', true);
+
+            xhr.onload = () => {
+                if (xhr.status >= 200 && xhr.status < 300) {
+                    const data = JSON.parse(xhr.responseText);
+                    mostrarResultado(data);
+                } else {
+                    resultadoDiv.innerHTML = 'Error al obtener datos.';
+                }
+            };
+
+            xhr.onerror = () => {
+                resultadoDiv.innerHTML = 'Error de red al obtener datos.';
+            };
+
+            xhr.send();
+        }
+
+        function mostrarResultado(data) {
+            const lista = document.createElement('ul');
+            resultadoDiv.innerHTML = '<h2>Resultados:</h2>';
+
+            data.forEach(item => {
+                const listItem = document.createElement('li');
+                listItem.textContent = `ID: ${item.id}, Título: ${item.title}`;
+                lista.appendChild(listItem);
+            });
+
+            resultadoDiv.appendChild(lista);
+        }
+    </script>
+</body>
+</html>

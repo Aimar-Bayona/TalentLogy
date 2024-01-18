@@ -1,0 +1,106 @@
+<!-- Lista de tareas interactiva: Desarrolla una lista de tareas donde los usuarios pueden agregar nuevas tareas y marcarlas como completadas. Utiliza AJAX para enviar y recibir datos desde un archivo JSON local. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      li {
+        margin-bottom: 10px;
+      }
+
+      .completed {
+        text-decoration: line-through;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Lista de tareas</h2>
+    <ul id="listaTareas"></ul>
+    <input type="text" id="nuevaTarea" placeholder="agregar tarea" />
+    <button onclick="agregarTarea()">agregar tarea</button>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => cargarTareas());
+      const listaTareas = document.getElementById("listaTareas");
+
+      function cargarTareas() {
+        fetch("./ejercicio3.json")
+          .then((response) => response.json())
+          .then((data) => {
+            data.forEach((tarea) => {
+              const item = document.createElement("li");
+              item.innerHTML = `<input type="checkbox" onchange="marcarCompletada(${
+                tarea.id
+              })" ${tarea.completada ? "checked" : ""}>
+                                            <span class="${
+                                              tarea.completada
+                                                ? "completed"
+                                                : ""
+                                            }">${tarea.tarea}</span>`;
+              listaTareas.appendChild(item);
+            });
+          })
+          .catch((e) => console.log(e));
+      }
+
+      function agregarTarea() {
+        const nuevaTareaI = document.getElementById("nuevaTarea");
+        const nuevaTarea = nuevaTareaI.value.trim();
+
+        if (nuevaTarea != "") {
+          fetch("./ejercicio3.json", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json", // Corrección aquí
+            },
+            body: JSON.stringify({
+              tarea: nuevaTarea,
+              completada: false,
+            }),
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              const item = document.createElement("li");
+              item.innerHTML = `<input type="checkbox" onchange="marcarCompletada(${data.id})">
+                                  <span>${data.tarea}</span>`;
+              listaTareas.appendChild(item);
+              nuevaTareaI.value = "";
+            })
+            .catch((e) => console.log(e));
+        }
+      }
+      function marcarCompletada(id) {
+        fetch(`./ejercicio3.json?id=${id}`, {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            completada: true,
+          }),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            const tarea = document.querySelector(
+              `[onclick="marcarCompletada(${id})"] + span`
+            );
+            tarea.classList.add("completed");
+          })
+          .catch((e) => console.log(e));
+      }
+    </script>
+  </body>
+</html>

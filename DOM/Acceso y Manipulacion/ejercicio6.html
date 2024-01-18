@@ -1,0 +1,36 @@
+<!-- Aplicación de Contador: Crea una aplicación de contador donde los usuarios pueden aumentar, disminuir y restablecer un contador. Utiliza eventos de clic para manejar las acciones y actualiza dinámicamente el DOM para reflejar el valor actual del contador. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <button onclick="aumentar()">aumentar</button>
+        <button onclick="disminuir()">disminuir</button>
+        <button onclick="resetear()">resetear</button>
+        <p id="contador"></p>
+    </div>
+
+    <script>
+        const contador = document.getElementById("contador")
+        let cont = 0
+        
+        function aumentar() {
+            cont++
+            contador.innerText = cont
+        }
+        function disminuir() {
+            cont--
+            contador.innerText = cont
+        }
+        function resetear() {
+            cont = parseInt(prompt("Ingrese el valor"))
+            contador.innerText = cont
+        }
+    </script>
+</body>
+</html>

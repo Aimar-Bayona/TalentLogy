@@ -1,0 +1,83 @@
+<!-- Contraseña segura: Desarrolla un formulario de registro que incluya una validación de contraseña. Utiliza JavaScript para verificar la fortaleza de la contraseña en función de criterios como longitud, caracteres especiales y números. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            padding: 8px;
+            margin-bottom: 10px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .error-message {
+            color: red;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <form id="registroForm" onsubmit="return validarFormulario()">
+        <label for="usuario">Usuario:</label>
+        <input type="text" id="usuario" name="usuario" required>
+
+        <label for="contrasena">Contraseña:</label>
+        <input type="password" id="contrasena" name="contrasena" oninput="validarContrasena()" required>
+        <span class="error-message" id="errorContrasena"></span>
+
+        <button type="submit">Registrarse</button>
+    </form>
+
+    <script>
+        function validarFormulario() {
+            const usuario = document.getElementById('usuario');
+            const contrasena = document.getElementById('contrasena');
+            const errorContrasena = document.getElementById('errorContrasena');
+            let valido = true;
+
+            const contrasenaRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
+            if (!contrasenaRegex.test(contrasena.value)) {
+                errorContrasena.textContent = 'La contraseña debe tener al menos 8 caracteres, incluyendo al menos una letra, un número y un carácter especial.';
+                valido = false;
+            } else {
+                errorContrasena.textContent = '';
+            }
+
+            return valido;
+        }
+
+        function validarContrasena() {
+            const contrasena = document.getElementById('contrasena');
+            const errorContrasena = document.getElementById('errorContrasena');
+
+            const contrasenaRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
+            if (!contrasenaRegex.test(contrasena.value)) {
+                errorContrasena.textContent = 'La contraseña debe tener al menos 8 caracteres, incluyendo al menos una letra, un número y un carácter especial.';
+            } else {
+                errorContrasena.textContent = '';
+            }
+        }
+    </script>
+
+</body>
+</html>

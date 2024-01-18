@@ -1,0 +1,60 @@
+<!-- Efecto Parallax al Desplazarse: Implementa un efecto parallax en un elemento mientras se desplaza por la página. Ajusta la velocidad del parallax según el desplazamiento. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            height: 150vh; 
+        }
+
+        .container {
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .contenido {
+            height: 100%;
+            background-image: url('https://e00-elmundo.uecdn.es/elmundo/imagenes/2009/01/23/1232735410_0.jpg');
+            background-size: cover;
+            background-position: center;
+            transform: translateZ(0); 
+        }
+
+        .capa {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.7); 
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="contenido" data-speed=".5"></div>
+      <div class="capa">
+        <h1>contenido</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae reprehenderit, quas in, nemo unde dignissimos, ipsam voluptatum ut necessitatibus dolorum veritatis voluptas harum dolorem cum odit amet et numquam ipsa?</p>
+      </div>
+    </div>
+
+    <script>
+        document.addEventListener('scroll', () => {
+            const contenido = document.getElementsByClassName("contenido")
+            const velocidad = parseFloat(contenido.getAttribute("data-speed"))
+            const y = -window.scrollY * velocidad
+            contenido.style.transform = 'translateY(' + y + 'px)'
+        })
+    </script>
+  </body>
+</html>

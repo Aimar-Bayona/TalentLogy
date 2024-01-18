@@ -1,0 +1,43 @@
+<!-- Alternar clases: Desarrolla una interfaz de lista donde cada elemento pueda cambiar su apariencia al hacer clic en él. Utiliza clases CSS y manipulación del DOM para alternar entre dos estilos diferentes. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .item {
+      padding: 10px;
+      border: 1px solid #ccc;
+      margin: 5px;
+      cursor: pointer;
+    }
+
+    .resaltado {
+      background-color: #ffd700;
+    }
+  </style>
+</head>
+<body>
+
+  <ul id="lista">
+    <li class="item">Elemento 1</li>
+    <li class="item">Elemento 2</li>
+    <li class="item">Elemento 3</li>
+  </ul>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const lista = document.getElementById("lista");
+      const items = lista.getElementsByClassName("item");
+
+      for (let i = 0; i < items.length; i++) {
+        items[i].addEventListener("click", () => {
+          this.classList.toggle("resaltado");
+        });
+      }
+    });
+  </script>
+</body>
+</html>

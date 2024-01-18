@@ -1,0 +1,18 @@
+<!-- Cambio de Color al Hacer Clic: Asigna un event listener a un botón. Cambia el color de fondo de un elemento cuando se hace clic en el botón. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="boton">Presiona</button>
+    <script>
+        const boton = document.getElementById("boton")
+        boton.addEventListener("click", () => boton.style.backgroundColor = "#f00")
+        boton.addEventListener("mouseleave", () => boton.style.backgroundColor = "#fff")
+    </script>
+</body>
+</html>

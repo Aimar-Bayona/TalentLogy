@@ -1,0 +1,32 @@
+<!-- Sistema de Comentarios en Tiempo Real: Implementa un sistema de comentarios en tiempo real. Los usuarios pueden agregar comentarios y ver nuevos comentarios sin tener que recargar la página. Utiliza eventos para actualizar dinámicamente el DOM. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Sistema de Comentarios</h1>
+    <div id="agregar">
+        <label for="nuevoComentario">Agregar comentario:</label>
+        <input type="text" id="nuevoComentario" placeholder="Comentario" required>
+        <button onclick="agregarComentario()">Agregar comentario</button>
+    </div>
+
+    <div id="comentarios"></div>
+
+    <script>
+        
+        function agregarComentario() {
+            const nuevoComentario = document.getElementById("nuevoComentario").value
+            const comentar = document.createElement("div")
+            comentar.textContent = nuevoComentario
+
+            document.getElementById("comentarios").appendChild(comentar)
+            document.getElementById("nuevoComentario").value = ""
+        }
+    </script>
+</body>
+</html>

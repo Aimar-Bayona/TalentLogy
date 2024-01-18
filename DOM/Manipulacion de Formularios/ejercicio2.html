@@ -1,0 +1,51 @@
+<!-- Autocompletado de direcciones: Implementa la autocompletación de direcciones a medida que los usuarios escriben en un campo de dirección. Utiliza una API de geolocalización y actualiza dinámicamente los campos del formulario. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAExWmviULOGFD3dIE2TjfDi72biSRq_Xs&libraries=places"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            padding: 8px;
+            margin-bottom: 10px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+
+    <form>
+        <label for="direccion">Dirección:</label>
+        <input type="text" id="direccion" placeholder="Escribe tu dirección" autocomplete="off">
+    </form>
+
+    <script>
+        window.addEventListener('load', inicializarAutocompletado);
+
+        function inicializarAutocompletado() {
+            const direccionInput = document.getElementById('direccion');
+            const autocomplete = new google.maps.places.Autocomplete(direccionInput);
+
+            autocomplete.addListener('place_changed', () => {
+                const lugar = autocomplete.getPlace();
+                console.log(lugar);
+            });
+        }
+    </script>
+
+</body>
+</html>

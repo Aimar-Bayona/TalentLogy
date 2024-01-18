@@ -1,0 +1,35 @@
+<!-- Respuestas Interactivas a Teclas: Cambia el color de fondo de una página web cuando se presionan ciertas teclas. Restaura el color original cuando se sueltan las teclas. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .presionado {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        const body = document.body
+
+        function presionar(event) {
+            if (event.key == 'a' || event.key == 'A') {
+                body.classList.add("presionado")
+            }
+        }
+        
+        function soltar(event) {
+            if (event.key == 'a' || event.key == 'A') {
+                body.classList.remove("presionado")
+            }
+        }
+
+        document.addEventListener("keydown", presionar)
+        document.addEventListener("keyup", soltar)
+    </script>
+</body>
+</html>

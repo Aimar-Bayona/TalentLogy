@@ -1,0 +1,52 @@
+<!-- Aplicación de Encuestas: Diseña una aplicación de encuestas donde los usuarios pueden seleccionar opciones y ver los resultados en tiempo real. Utiliza eventos para gestionar las selecciones y actualiza dinámicamente el DOM. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Encuesta</h1>
+    <form id="encuesta">
+        <label>
+            <input type="radio" value="rojo">Rojo
+        </label>
+        <label>
+            <input type="radio" value="verde">Verde
+        </label>
+        <label>
+            <input type="radio" value="azul">Azul
+        </label>
+    </form>
+
+    <div id="resultados">
+        <h1>Resultados:</h1>
+        <ul id="lista"></ul>
+    </div>
+
+    <script>
+        const form = document.getElementById("encuesta")
+        const lista = document.getElementById("lista")
+
+        form.addEventListener("change", actualizar)
+        function actualizar() {
+            lista.innerHTML = ""
+            
+            const opciones = document.querySelectorAll('input:checked')
+            const resultados = {}
+            opciones.forEach(opcion => {
+                const valor = opcion.value
+                resultados[valor] = (resultados[valor] || 0) + 1
+            })
+
+            for (const color in resultados) {
+                const li = document.createElement("li")
+                li.textContent = `${color}: ${resultados[color]}`
+                lista.appendChild(li)
+            }
+        }
+    </script>
+</body>
+</html>

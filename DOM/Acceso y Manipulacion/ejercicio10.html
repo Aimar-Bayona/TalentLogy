@@ -1,0 +1,61 @@
+<!-- Sistema de Reservas: Crea un sistema de reservas interactivo. Los usuarios pueden seleccionar fechas y horas disponibles, y el sistema debe reflejar dinámicamente las reservas realizadas. Utiliza eventos para gestionar las selecciones y actualiza el DOM en consecuencia. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Reservas</title>
+</head>
+<body>
+    <h1>Sistema de Reservas</h1>
+
+    <div id="calendario"></div>
+    <div id="reservas">
+        <h3>Reservas:</h3>
+        <ul id="listaReservas"></ul>
+    </div>
+
+    <script>
+        const calendario = document.getElementById("calendario");
+        const reservas = document.getElementById("reservas");
+        const listaReservas = document.getElementById("listaReservas");
+        const horarios = ['2:00 PM', '4:00 PM', '6:00 PM'];
+
+        for (let i = 1; i <= 7; i++) {
+            const fecha = new Date();
+            fecha.setDate(fecha.getDate() + i);
+
+            const dia = fecha.toLocaleDateString('en-US', { weekday: 'long' });
+            const fechaFormateada = fecha.toLocaleDateString('en-US');
+
+            const divFecha = document.createElement("div");
+            divFecha.innerHTML = `<strong>${dia}</strong> - ${fechaFormateada}`;
+            calendario.appendChild(divFecha);
+
+            horarios.forEach(hora => {
+                const divHora = document.createElement("div");
+                divHora.classList.add("disponible");
+                divHora.textContent = `${hora}`;
+                divHora.addEventListener("click", () => reservar(fechaFormateada, hora));
+                calendario.appendChild(divHora);
+            });
+        }
+
+        function reservar(fecha, hora) {
+            const reserva = `${fecha} a las ${hora}`;
+            const liReserva = document.createElement("li");
+            liReserva.textContent = reserva;
+            listaReservas.appendChild(liReserva);
+
+            // Marcar la hora como reservada
+            const horasReservadas = document.querySelectorAll('.disponible');
+            horasReservadas.forEach(h => {
+                h.removeEventListener("click", () => reservar(fecha, hora));
+                h.classList.remove("disponible");
+                h.classList.add("reservado");
+            });
+        }
+    </script>
+</body>
+</html>

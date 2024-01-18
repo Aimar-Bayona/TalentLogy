@@ -1,0 +1,33 @@
+<!-- Crear una Lista Dinámica: Crea una lista (<ul> o <ol>) vacía. Agrega elementos a la lista utilizando un formulario y JavaScript. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form onsubmit="enviar(event)">
+    <label for="">Agregue item</label>
+    <input type="text" id="valor" required>
+    <button type="submit">Enviar item</button>
+  </form>
+  <ol id="lista"></ol>
+
+  <script>
+    function enviar(event) {
+      event.preventDefault()
+      const lista = document.getElementById("lista")
+      const input = document.getElementById("valor")
+      const valor = input.value
+      
+      const item = document.createElement("li")
+      item.textContent = valor
+      lista.appendChild(item)
+
+      input.value = ""
+    }
+  </script>
+</body>
+</html>

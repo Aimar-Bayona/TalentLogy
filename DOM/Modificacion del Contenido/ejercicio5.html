@@ -1,0 +1,29 @@
+<!-- Cambiar Clases Dinámicamente: Asigna un event listener a un botón. Al hacer clic, cambia la clase de un elemento, alterando su estilo. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .clase1 {
+            background-color: red;
+        }
+        .clase2 {
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <p class="clase1" id="contenido">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis quaerat, dolor id, esse quia nostrum architecto officiis consequatur animi dolores consectetur. Ullam, sequi possimus? Consequuntur soluta numquam eum doloremque unde!</p>
+    <button onclick="cambioColor()">Cambiar color</button>
+
+    <script>
+        function cambioColor() {
+            const p = document.getElementById("contenido")
+            p.classList.toggle("clase2")
+        }
+    </script>
+</body>
+</html>

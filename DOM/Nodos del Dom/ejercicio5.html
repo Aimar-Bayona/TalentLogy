@@ -1,0 +1,19 @@
+<!-- Comentarios Dinámicos: Utiliza JavaScript para agregar un comentario dinámico a tu código HTML. Por ejemplo, puedes agregar un comentario que indique la fecha y hora en que se realizó una acción específica. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="texto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum consequatur reprehenderit facere ducimus esse, quod omnis voluptas dolor sequi, totam iusto non obcaecati? Commodi alias quae inventore vel consequatur suscipit.</p>
+
+    <script>
+        let comentario = document.createComment("Nuevo comentario" + new Date().toLocaleString())
+        let texto = document.getElementById("texto")
+        texto.appendChild(comentario)
+    </script>
+</body>
+</html>

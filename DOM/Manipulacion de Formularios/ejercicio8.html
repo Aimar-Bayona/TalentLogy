@@ -1,0 +1,79 @@
+<!-- Lista de selección múltiple mejorada: Mejora una lista de selección múltiple permitiendo la búsqueda y selección de elementos. Utiliza el DOM para actualizar la lista según los términos ingresados por el usuario. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        select {
+            padding: 8px;
+            margin-bottom: 10px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+
+    <form>
+        <label for="seleccionMultiple">Selecciona múltiples elementos:</label>
+        <select id="seleccionMultiple" multiple size="5"></select>
+
+        <label for="busqueda">Buscar elementos:</label>
+        <input type="text" id="busqueda" oninput="filtrarElementos()" placeholder="Escribe para buscar">
+
+        <button type="button" onclick="agregarElemento()">Agregar Elemento</button>
+    </form>
+
+    <script>
+        const seleccionMultiple = document.getElementById('seleccionMultiple');
+        const busquedaInput = document.getElementById('busqueda');
+        const elementosDisponibles = ['Elemento 1', 'Elemento 2', 'Elemento 3', 'Elemento 4'];
+
+        elementosDisponibles.forEach(elemento => {
+            const option = document.createElement('option');
+            option.value = elemento;
+            option.textContent = elemento;
+            seleccionMultiple.appendChild(option);
+        });
+
+        function filtrarElementos() {
+            const filtro = busquedaInput.value.toLowerCase();
+
+            Array.from(seleccionMultiple.options).forEach(option => {
+                const texto = option.textContent.toLowerCase();
+                option.style.display = texto.includes(filtro) ? 'block' : 'none';
+            });
+        }
+
+        function agregarElemento() {
+            const nuevoElemento = busquedaInput.value;
+            
+            if (nuevoElemento && !elementosDisponibles.includes(nuevoElemento)) {
+                const option = document.createElement('option');
+                option.value = nuevoElemento;
+                option.textContent = nuevoElemento;
+                seleccionMultiple.appendChild(option);
+                elementosDisponibles.push(nuevoElemento);
+            }
+
+            busquedaInput.value = '';
+            Array.from(seleccionMultiple.options).forEach(option => {
+                option.style.display = 'block';
+            });
+        }
+    </script>    
+</body>
+</html>

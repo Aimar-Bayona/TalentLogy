@@ -1,0 +1,74 @@
+<!-- Campos dinámicos de formulario: Crea un formulario que permite a los usuarios agregar dinámicamente campos adicionales según sea necesario. Utiliza el DOM para clonar y agregar nuevos elementos al formulario en respuesta a las acciones del usuario. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      input {
+        padding: 8px;
+        margin-bottom: 10px;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      .campo-adicional {
+        margin-top: 10px;
+      }
+
+      button {
+        padding: 10px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="miFormulario">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" required />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+
+      <div id="camposAdicionales"></div>
+
+      <button type="button" onclick="agregarCampo()">Agregar Campo</button>
+      <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+      let contadorCampos = 0;
+
+      function agregarCampo() {
+        const camposAdicionales = document.getElementById("camposAdicionales");
+        const nuevoCampo = document.createElement("div");
+        nuevoCampo.classList.add("campo-adicional");
+
+        const nuevoLabel = document.createElement("label");
+        nuevoLabel.textContent = `Campo Adicional ${contadorCampos + 1}:`;
+
+        const nuevoInput = document.createElement("input");
+        nuevoInput.type = "text";
+        nuevoInput.name = `campo${contadorCampos + 1}`;
+
+        nuevoCampo.appendChild(nuevoLabel);
+        nuevoCampo.appendChild(nuevoInput);
+        camposAdicionales.appendChild(nuevoCampo);
+
+        contadorCampos++;
+      }
+    </script>
+  </body>
+</html>

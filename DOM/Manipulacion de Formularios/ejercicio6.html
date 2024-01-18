@@ -1,0 +1,68 @@
+<!-- Campos dependientes de la fecha: Crea un formulario de reserva que ajuste dinámicamente las opciones disponibles en función de la fecha seleccionada por el usuario. Utiliza el DOM para actualizar las opciones de campos relacionados. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        select, input {
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <form id="reservaForm">
+        <label for="fecha">Fecha de reserva:</label>
+        <input type="date" id="fecha" name="fecha" onchange="actualizarHorasDisponibles()" required>
+
+        <label for="hora">Hora de reserva:</label>
+        <select id="hora" required>
+        </select>
+
+        <button type="submit">Reservar</button>
+    </form>
+
+    <script>
+        function actualizarHorasDisponibles() {
+            const fechaInput = document.getElementById('fecha');
+            const horaSelect = document.getElementById('hora');
+            const fechaSeleccionada = new Date(fechaInput.value);
+            const horasDisponibles = obtenerHorasDisponibles(fechaSeleccionada);
+
+            horaSelect.innerHTML = '';
+
+            horasDisponibles.forEach(hora => {
+                const option = document.createElement('option');
+                option.value = hora;
+                option.text = hora;
+                horaSelect.add(option);
+            });
+        }
+
+        function obtenerHorasDisponibles(fecha) {
+            const horasFijas = ['10:00 AM', '12:00 PM', '2:00 PM', '4:00 PM'];
+            return horasFijas;
+        }
+    </script>
+</body>
+</html>

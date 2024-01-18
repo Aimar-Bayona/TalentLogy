@@ -1,0 +1,21 @@
+<!-- Modificar Atributos de Imagen: Selecciona una imagen y cambia su fuente (src) dinámicamente al hacer clic en un botón. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img id="imagen" src="https://s.car.info/image_files/360/ford-mustang-front-side-power-big-meet-2015-1-132216.jpg" alt="">
+    <button onclick="cambiaImagen()">Cambia la imagen</button>
+
+    <script>
+        function cambiaImagen() {
+            const img = document.getElementById("imagen")
+            img.src = "https://img.remediosdigitales.com/4b6cf1/ford-mustang_shelby_gt500_heritage_edition-2022-1600-01/840_560.jpg"
+        }
+    </script>
+</body>
+</html>

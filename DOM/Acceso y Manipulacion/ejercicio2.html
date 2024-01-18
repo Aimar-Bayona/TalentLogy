@@ -1,0 +1,57 @@
+<!-- Galería de Imágenes con Descripciones: Crea una galería de imágenes con miniaturas y descripciones. Al hacer clic en una miniatura, la imagen debería mostrarse en tamaño completo junto con su descripción. Utiliza eventos para cambiar dinámicamente el contenido. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Imágenes</title>
+    <style>
+        body {
+            text-align: center;
+            margin: 20px;
+        }
+
+        #galeria {
+            margin-bottom: 20px;
+        }
+
+        img {
+            max-width: 60%;
+            max-height: 60%;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .thumbnails {
+            display: flex;
+            justify-content: center;
+        }
+
+        .thumbnail {
+            width: auto;
+            height: 80px;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="galeria">
+        <img src="https://encdn.ldmnq.com/ldstore/8A4fZC-1660559187541.jpeg" alt="Imagen principal" id="principal">
+    </div>
+
+    <div class="thumbnails">
+        <img class="thumbnail" src="https://www.mundodeportivo.com/urbantecno/hero/2021/07/Las-mejores-apps-de-COD-para-iOS-y-Android.jpg?width=768&aspect_ratio=16:9&format=nowebp" alt="Miniatura 1" onclick="cambiarImagen('https://www.mundodeportivo.com/urbantecno/hero/2021/07/Las-mejores-apps-de-COD-para-iOS-y-Android.jpg?width=768&aspect_ratio=16:9&format=nowebp', 'Descripción de la imagen 1')">
+        <img class="thumbnail" src="https://www.callofduty.com/content/dam/atvi/callofduty/cod-touchui/blog/hero/mwii/MWII-LAUNCH-INTEL-TOUT.jpg" alt="Miniatura 2" onclick="cambiarImagen('https://www.callofduty.com/content/dam/atvi/callofduty/cod-touchui/blog/hero/mwii/MWII-LAUNCH-INTEL-TOUT.jpg', 'Descripción de la imagen 2')">
+        <img class="thumbnail" src="https://blz-contentstack-images.akamaized.net/v3/assets/bltf408a0557f4e4998/blt7a583fb2158f9d8f/656a79edf38596d62f25a561/CODWZ_S1-Bnet_Game-Card_Feature_1-960x540_(1).jpg" alt="Miniatura 3" onclick="cambiarImagen('https://blz-contentstack-images.akamaized.net/v3/assets/bltf408a0557f4e4998/blt7a583fb2158f9d8f/656a79edf38596d62f25a561/CODWZ_S1-Bnet_Game-Card_Feature_1-960x540_(1).jpg', 'Descripción de la imagen 3')">
+    </div>
+
+    <script>
+        function cambiarImagen(src, descripcion) {
+            const imgPrincipal = document.getElementById("principal");
+            imgPrincipal.src = src;
+            imgPrincipal.alt = descripcion;
+        }
+    </script>
+</body>
+</html>

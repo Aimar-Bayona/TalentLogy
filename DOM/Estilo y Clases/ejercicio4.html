@@ -1,0 +1,85 @@
+<!-- Galería de imágenes interactiva: Crea una galería de imágenes que permita a los usuarios navegar entre ellas. Utiliza clases y estilos para resaltar la imagen actual y ajustar dinámicamente el tamaño de las miniaturas. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        #galeria {
+            display: flex;
+            max-width: 800px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #miniaturas {
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+            background-color: #fff;
+        }
+
+        .miniatura {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 5px;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .miniatura:hover {
+            transform: scale(1.2);
+        }
+
+        #imagenPrincipal {
+            flex-grow: 1;
+            max-width: 750px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="galeria">
+        <div id="miniaturas"></div>
+        <img id="imagenPrincipal" src="" alt="Imagen Principal">
+    </div>
+
+    <script>
+        const miniaturasContainer = document.getElementById("miniaturas");
+        const imagenPrincipal = document.getElementById("imagenPrincipal");
+        const imagenes = ["https://pub-static.fotor.com/assets/projects/pages/5be9d15a-0dc6-49e0-b41b-b787b56a9fac/dark-blue-sky-book-cover-302c2497f51741ccb4f94de481b0a34c.jpg", "https://www.adobe.com/es/express/create/cover/media_12d8ffcad2cbb97aa5ffcacf4c5c2c2e2b63ed8c3.jpeg?width=400&format=jpeg&optimize=medium", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6E0v996OPpGAiVbJ4CZ0xyRDlMAgfRAmbgl39zWSUMYk9sf7O8KD_zTfl_ekwW8w1puE&usqp=CAU", "https://s3.amazonaws.com/virginia.webrand.com/virginia/344/UAr1p9YXkz4/cd7b2419cdbc7c07417eaf289e64e0f1.jpg?1691065753"];
+
+        imagenes.forEach((imagen, index) => {
+            const miniatura = document.createElement("img");
+            miniatura.src = imagen;
+            miniatura.alt = `Miniatura ${index + 1}`;
+            miniatura.classList.add("miniatura");
+            miniatura.addEventListener("click", () => mostrarImagen(index));
+            miniaturasContainer.appendChild(miniatura);
+        });
+
+        function mostrarImagen(index) {
+            imagenPrincipal.src = imagenes[index];
+            miniaturasContainer.childNodes.forEach((miniatura, i) => {
+                miniatura.classList.toggle("seleccionada", i === index);
+            });
+        }
+
+        mostrarImagen(0);
+    </script>
+
+</body>
+</html>

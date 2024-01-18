@@ -1,0 +1,40 @@
+<!-- Formulario de contacto asincrónico: Diseña un formulario de contacto que, al enviar, utiliza AJAX para enviar los datos al servicio de prueba Beeceptor (https://beeceptor.com/) y muestra un mensaje de éxito o error sin recargar la página. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h2>Formulario</h2>
+  <form id="formulario">
+    <label for="">nombre:</label>
+    <input type="text" id="nombre">
+    <label for="">Correo:</label>
+    <input type="text" id="email">
+    <label for="">mensaje:</label>
+    <textarea name="" id="mensaje" cols="30" rows="10"></textarea>
+    <button type="button" onclick="enviar()">enviar mensaje</button>
+  </form>
+
+  <div id="resultado"></div>
+
+  <script>
+    function enviar() {
+      const formulario = document.getElementById("formulario")
+      const resultado = document.getElementById("resultado")
+      const formData = new FormData(formulario)
+
+      fetch('https://salida.free.beeceptor.com', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.json())
+      .then(data => resultado.innerHTML = data.message)
+      .catch(e => resultado.innerHTML = "Error al enviar el formulario")
+    }
+  </script>
+</body>
+</html>

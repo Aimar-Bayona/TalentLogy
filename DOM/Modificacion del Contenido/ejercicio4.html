@@ -1,0 +1,21 @@
+<!-- Eliminar un Elemento: Agrega un botón que, al hacer clic, elimine un elemento específico de la página. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="eliminar">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim, ex, autem provident consequatur mollitia inventore quasi itaque eligendi ipsum, ipsam sunt corrupti sint obcaecati. Explicabo voluptate nulla saepe modi consequatur?</p>
+    <button onclick="eliminar()">Eliminar contenido</button>
+
+    <script>
+        function eliminar() {
+            const contenido = document.getElementById("eliminar")
+            contenido.remove()
+        }
+    </script>
+</body>
+</html>

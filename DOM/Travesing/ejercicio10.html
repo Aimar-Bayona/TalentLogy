@@ -1,0 +1,36 @@
+<!-- Actualización de Contenido en Tiempo Real: Utiliza JavaScript para actualizar dinámicamente el contenido de tu página en tiempo real, como mostrar la hora actualizada sin necesidad de recargar. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hora actual:</h1>
+    <p id="horaActual"></p>
+
+    <script>
+        function horaActual() {
+            const elementoHoraActual = document.getElementById('horaActual')
+            const hora = new Date()
+            const horaFormateada = hora.toLocaleTimeString()
+            elementoHoraActual.textContent = horaFormateada
+        }
+
+        setInterval(horaActual, 1000)
+
+        horaActual()
+
+        function horaActual() {
+            const horaActual = document.getElementById('horaActual')
+            const hora = new Date()
+            const formato = hora.toLocaleTimeString()
+            horaActual.textContent = formato
+        }
+
+        setInterval(horaActual =>{}, 1000);
+    </script>
+</body>
+</html>

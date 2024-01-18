@@ -1,0 +1,33 @@
+<!-- Cambio de Color al Pasar el Ratón: Selecciona varios elementos en tu página y cambia su color cuando el usuario pasa el ratón sobre ellos. Restaura el color original cuando el ratón sale del elemento. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="header1">Pasar el puntero</h1>
+    <p id="p1">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto laborum doloribus asperiores? Iusto veritatis quaerat ut architecto reprehenderit consequuntur id consequatur aperiam sed optio, maiores accusantium. Ut animi reprehenderit ullam.</p>
+    <h2 id="header2">Pasar el puntero</h2>
+    <p id="p2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto laborum doloribus asperiores? Iusto veritatis quaerat ut architecto reprehenderit consequuntur id consequatur aperiam sed optio, maiores accusantium. Ut animi reprehenderit ullam.</p>
+
+    <script>
+        const header1 = document.getElementById("header1")
+        const header2 = document.getElementById("header2")
+        const p1 = document.getElementById("p1")
+        const p2 = document.getElementById("p2")
+
+        cambiarColor(header1, "#f00")
+        cambiarColor(header2, "#0f0")
+        cambiarColor(p1, "#00f")
+        cambiarColor(p2, "#ff0")
+
+        function cambiarColor(elemento, color) {
+            elemento.addEventListener("mouseenter", () => elemento.style.backgroundColor = color)
+            elemento.addEventListener("mouseleave", () => elemento.style.backgroundColor = "#fff")
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!-- Aplicación de Lista de Tareas: Diseña una aplicación de lista de tareas donde los usuarios puedan agregar, marcar como completas y eliminar tareas. Utiliza eventos de clic para manejar las interacciones y actualiza dinámicamente el DOM. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="tarea">Agregar Tarea</label>
+    <input type="text" id="agregar" placeholder="Añadir nueva tarea">
+    <ul id="lista"></ul>
+
+    <script>
+        let agregar = document.getElementById("agregar")
+        let lista = document.getElementById("lista")
+
+        agregar.addEventListener("keypress", event => {
+            if (event.key == 'Enter' && agregar.value.trim() !='') {
+                agregarTarea(agregar.value.trim())
+                agregar.value = ""
+            }
+        })
+
+        function agregarTarea(tarea) {
+            const item = document.createElement("li")
+            const texto = document.createTextNode(tarea)
+
+            item.appendChild(texto)
+            lista.appendChild(item)
+            item.addEventListener("contextmenu", event => {
+                event.preventDefault()
+                borrarTarea(item)
+            })
+        }
+
+        function borrarTarea(tarea) {
+            lista.removeChild(tarea)
+        }
+
+    </script>
+</body>
+</html>

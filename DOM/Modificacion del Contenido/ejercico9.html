@@ -1,0 +1,37 @@
+<!-- Animación al Hacer Clic: Asigna un evento a un botón para que, al hacer clic, un elemento experimente una animación o cambio de estilo gradual. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #contenido {
+            height: 200px;
+            width: 200px;
+            background-color: #00f;
+            transition: all 1s ease;
+        }
+
+        #contenido.nuevo {
+            height: 200px;
+            width: 200px;
+            background-color: #f0f;
+            border-radius: 100%;
+            transition: all 1s ease;
+        }
+    </style>
+</head>
+<body>
+    <div id="contenido"></div>
+    <button onclick="cambio()">Cambia el estilo</button>
+
+    <script>
+        function cambio() {
+            const contenido = document.getElementById("contenido")
+            contenido.classList.toggle("nuevo")
+        }
+    </script>
+</body>
+</html>

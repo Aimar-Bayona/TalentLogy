@@ -1,0 +1,53 @@
+<!-- Toggle de Clase al Hacer Clic: Selecciona un conjunto de elementos y aplica un efecto de "toggle" al hacer clic en ellos, como cambiar su fondo o bordes. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="content" onclick="toggle()">
+      <h1 id="content1">Content</h1>
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores,
+        iste? Magnam, quis atque velit, maiores optio aliquid laborum architecto
+        molestias voluptatum totam vero odit excepturi eos labore? Et, atque
+        culpa. Cumque praesentium tempore assumenda itaque adipisci eveniet
+        porro reprehenderit, accusamus veritatis, rem nihil repellendus ab
+        recusandae tenetur. Nesciunt unde iste vitae, sapiente voluptate facilis
+        eaque saepe vero perferendis. Totam, exercitationem.
+      </p>
+      <h2 id="content2">More content</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero optio
+        officia nihil perferendis consectetur eius beatae accusantium recusandae
+        quo deserunt tempore animi, odit harum totam blanditiis, placeat
+        provident fuga expedita. Dicta eius iste rerum animi sequi atque nostrum
+        eum itaque quod? Ex quisquam laboriosam veniam ad necessitatibus maxime
+        iusto alias doloremque sit, earum cum tenetur impedit numquam facilis
+        dolorum quia. Dolor ullam esse quae sit nihil exercitationem, distinctio
+        et rerum eos perspiciatis deserunt ad dignissimos fuga maxime autem
+        asperiores iste, quaerat aspernatur! Eligendi quam, non veritatis sequi
+        rem libero vero.
+      </p>
+    </div>
+
+    <script>
+      function toggle() {
+        const content1 = document.getElementById("content1");
+        const content2 = document.getElementById("content2");
+        const p = document.querySelectorAll('p')
+
+        content1.style.color = "#b2b"
+        content2.style.color = "#888"
+        p.forEach(p => {
+            p.style.color = "#e42"
+        });
+        
+        
+      }
+    </script>
+  </body>
+</html>
